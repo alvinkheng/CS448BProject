@@ -1,0 +1,86 @@
+body {
+	background-repeat: no-repeat;
+	background-position: center top;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #4D4D4D;
+}
+
+
+h1, h3, h4, h5 {
+	padding: 2px 2px 2px 2px;
+	margin: 1px 1px 1px 1px;
+	font-weight: 400;
+}
+
+h2 {
+	padding: 2px 2px 2px 2px;
+	margin: 1px 1px 1px 1px;
+	font-weight: 300;
+}
+
+h5 {
+	font-weight: 600;
+}
+
+#headerGroup {
+	padding: 10px 10px 10px 10px;
+	background-color: white;
+}
+
+#navigation {
+	margin-left: 150px;
+}
+
+a:hover {
+	font-size: bigger;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #4D4D4D;
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+  
+}
+
+.axis text {
+    font-size: 10px;
+	font-family: 'Source Sans Pro', sans-serif;
+  	color: #4D4D4D;
+  	font-weight: 300;
+}
+    
+.data-point {
+    stroke: #666666;
+    stroke-width: 1.5;
+    fill: #FFF;
+}
+
+.area {
+  fill: #DF004F;
+  opacity: 0.8;
+}
+
+.areaHighlightWin {
+    stroke: grey;
+    stroke-width: 1;
+    fill: #53Df00;
+}
+
+.areaHighlightLoss {
+    stroke: grey;
+    stroke-width: 1;
+    fill: #F60018;
+}
+
+#chart {
+		padding-bottom: 0px;
+        margin-bottom: 0px;
+}
+
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
