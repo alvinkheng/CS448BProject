@@ -1,15 +1,28 @@
+$(window).bind('orientationchange', orientationHandler);
+
 var margin = {top: 20, right: 10, bottom: 20, left: 10},
     width = 320 - margin.left - margin.right,
     height = 480 - margin.top - margin.bottom;
 
-var xDomain = 5;
+var X_DOMAIN = 5;
+var LOW_BPM = 0;
+var HIGH_BPM = 20;
+var _orientation = "portrait";
+
+function orientationHandler() {
+    if($(window).width() < $(window).height()) {
+        _orientation = "portrait";
+    } else if($(window).width() > $(window).height()) {
+        _orientation = "landscape";
+    }
+}
 
 var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 var parseDate = d3.time.format("%Y-%m-%d %I:%M:%S %p").parse;
 
 var x = d3.scale.linear()
-    .domain([-xDomain, xDomain])
+    .domain([-X_DOMAIN, X_DOMAIN])
     .range([0, width])
     .nice();
 
@@ -31,10 +44,8 @@ var svg = d3.select("#chart").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 //Normalizes the bpm then uses that value to interpolate between green and purple
-var lowBPM = 0;
-var highBPM = 20;
 function getBPMColor(bpm) {
-    var normalizedBPM = Math.max(0, Math.min(bpm/(highBPM-lowBPM), 1));
+    var normalizedBPM = Math.max(0, Math.min(bpm/(HIGH_BPM-LOW_BPM), 1));
     var color = {};
     color.r = Math.round(normalizedBPM * 255);
     color.g = Math.round((1-normalizedBPM) * 255);
@@ -72,8 +83,8 @@ d3.csv("sampleData.csv", function(data, error) {
     //variables for formatting
     var barHeight = 10;
     var yAxisOffset = 28;
-    var xOrigin = x(-xDomain/4.0);
-    var barWidth = x(-xDomain/2.0);
+    var xOrigin = x(-X_DOMAIN/4.0);
+    var barWidth = x(-X_DOMAIN/2.0);
        
     //append one day's data to graph
     svg.selectAll(".bar")
@@ -104,7 +115,7 @@ d3.csv("sampleData.csv", function(data, error) {
        .append("svg:circle")
        .attr("class", "data-point")
        .attr("r", function(d) { return (d.calendar_event != "" || d.notes != "") ? 8 : 0; })
-       .attr("cx", function(d) { if (d.calendar_event != "" || d.notes != "") return x(-xDomain/4); })
+       .attr("cx", function(d) { if (d.calendar_event != "" || d.notes != "") return x(-X_DOMAIN/4); })
        .attr("cy", function(d) { if (d.calendar_event != "" || d.notes != "") return y(d.date); })
        
        
