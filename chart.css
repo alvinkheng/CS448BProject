@@ -7,6 +7,20 @@ body {
 
 #chart {
     background-color: #E0E0E0;
+    #position: absolute;
+    # top: 0px;
+    #left: 0px;
+    z-index: 1;
+    display: block;
+}
+
+#chartWeekly {
+    background-color: #E0E0E0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    display: none;
 }
 
 h1, h3, h4, h5 {
@@ -59,4 +73,10 @@ a:hover {
     stroke: #666666;
     stroke-width: 1.5;
     fill: #FFF;
+}
+
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
 }
