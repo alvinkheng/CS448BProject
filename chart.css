@@ -22,26 +22,21 @@ h5 {
 	font-weight: 600;
 }
 
-#headerGroup {
-	padding: 10px 10px 10px 10px;
-	background-color: white;
-}
-
-#navigation {
-	margin-left: 150px;
-}
-
 a:hover {
 	font-size: bigger;
+}
+
+svg {
+    background-color: #E0E0E0;
 }
 
 .axis path,
 .axis line {
   fill: none;
-  stroke: #4D4D4D;
+  stroke: #FFF;
   stroke-width: 1;
   shape-rendering: crispEdges;
-  
+  display:none;
 }
 
 .axis text {
@@ -50,6 +45,19 @@ a:hover {
   	color: #4D4D4D;
   	font-weight: 300;
 }
+
+.graphHeader text {
+    font-size: 20px;
+    font-weight: bold;
+    fill: #FFF;
+    text-decoration:underline;
+}
+
+.y.axis text {
+    font-size: 15px;
+    font-weight: bold;
+    fill: #FFF;
+}
     
 .data-point {
     stroke: #666666;
@@ -57,30 +65,11 @@ a:hover {
     fill: #FFF;
 }
 
-.area {
-  fill: #DF004F;
-  opacity: 0.8;
-}
-
-.areaHighlightWin {
-    stroke: grey;
-    stroke-width: 1;
-    fill: #53Df00;
-}
-
-.areaHighlightLoss {
-    stroke: grey;
-    stroke-width: 1;
-    fill: #F60018;
-}
-
 #chart {
 		padding-bottom: 0px;
         margin-bottom: 0px;
 }
 
-.line {
-    fill: none;
-    stroke: steelblue;
-    stroke-width: 1.5px;
+.bar {
+    
 }
