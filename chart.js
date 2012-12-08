@@ -98,13 +98,12 @@ d3.csv("sampleData.csv", function(data, error) {
     var circles = dataCirclesGroup.selectAll(".data-point")
        .data(dailyData[0]);
        
-    circles
-       .enter()
+    circles.enter()
        .append("svg:circle")
        .attr("class", "data-point")
-       .attr("r", 4)
-       .attr("cx", function(d) { return x(d.date); })
-       .attr("cy", function(d) { return y(d.bpm); })
+       .attr("r", function(d) { return (d.calendar_event != "" || d.notes != "") ? 4 : 0; })
+       .attr("cx", function(d) { if (d.calendar_event != "" || d.notes != "") return x(-xDomain/2); })
+       .attr("cy", function(d) { if (d.calendar_event != "" || d.notes != "") return yOffset+y(d.date); })
        
        
        $('svg circle').tipsy({
