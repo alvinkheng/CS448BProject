@@ -2,12 +2,14 @@ var margin = {top: 20, right: 10, bottom: 20, left: 10},
     width = 320 - margin.left - margin.right,
     height = 480 - margin.top - margin.bottom;
 
+var xDomain = 5;
+
 var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 var parseDate = d3.time.format("%Y-%m-%d %I:%M:%S %p").parse;
 
 var x = d3.scale.linear()
-    .domain([-5, 5])
+    .domain([-xDomain, xDomain])
     .range([0, width])
     .nice();
 
@@ -60,16 +62,22 @@ d3.csv("sampleData.csv", function(data, error) {
     
     //set y scales 
     y.domain(d3.extent(dailyData[0], function(d) { return d.date; }));
+    
+    //variables for formatting
+    var yOffset = 10;
+    var barHeight = 10;
+    var yAxisOffset = 28;
        
     //append one day's data to graph
     svg.selectAll(".bar")
         .data(dailyData[0])
       .enter().append("rect")
+        .attr("transform", "translate(0, "+yOffset+")")
         .attr("class", "bar")
-        .attr("x", x(-2.5))
+        .attr("x", x(-xDomain/2.0))
         .attr("width", x(0))
         .attr("y", function(d) { return y(d.date); })
-        .attr("height", 10)
+        .attr("height", barHeight)
         .attr("style", function(d) {
             var color = getBPMColor(d.bpm);
             return "fill:rgb("+color.r+","+color.g+","+color.b+")";
@@ -83,7 +91,7 @@ d3.csv("sampleData.csv", function(data, error) {
     svg.append("g")
         .attr("class", "y axis")
         .call(yAxis)
-        .attr("transform", "translate("+width/2+")");
+        .attr("transform", "translate("+((width/2) - yAxisOffset)+", "+yOffset+")");
     
     //tool tips
     var dataCirclesGroup = svg.append('svg:g');
