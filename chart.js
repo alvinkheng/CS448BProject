@@ -74,8 +74,8 @@ d3.csv("sampleData.csv", function(data, error) {
       .enter().append("rect")
         .attr("transform", "translate(0, "+yOffset+")")
         .attr("class", "bar")
-        .attr("x", x(-xDomain/2.0))
-        .attr("width", x(0))
+        .attr("x", x(-xDomain/4.0))
+        .attr("width", x(-xDomain/2.0))
         .attr("y", function(d) { return y(d.date); })
         .attr("height", barHeight)
         .attr("style", function(d) {
@@ -101,8 +101,8 @@ d3.csv("sampleData.csv", function(data, error) {
     circles.enter()
        .append("svg:circle")
        .attr("class", "data-point")
-       .attr("r", function(d) { return (d.calendar_event != "" || d.notes != "") ? 4 : 0; })
-       .attr("cx", function(d) { if (d.calendar_event != "" || d.notes != "") return x(-xDomain/2); })
+       .attr("r", function(d) { return (d.calendar_event != "" || d.notes != "") ? 8 : 0; })
+       .attr("cx", function(d) { if (d.calendar_event != "" || d.notes != "") return x(-xDomain/4); })
        .attr("cy", function(d) { if (d.calendar_event != "" || d.notes != "") return yOffset+y(d.date); })
        
        
@@ -113,15 +113,15 @@ d3.csv("sampleData.csv", function(data, error) {
                              title: function() {
                                  var d = this.__data__;
                                  
-                                 var title = "Breath Rate: " + d.bpm + " bpm";
+                                 var title = d.bpm + " bpm";
                                  if (d.location != "") {
-                                    title += "<br /> Location: " + d.location;
+                                    title += "<br /> @ " + d.location;
                                  }
                                  if (d.notes != "") {
                                      title += "<br /> Notes: " + d.notes;
                                  }
                                  if (d.calendar_event != "") {
-                                     title += "<br /> Calendar Event: " + d.calendar_event;
+                                     title += "<br /> Calendar: " + d.calendar_event;
                                  }
                                  if (d.mood != "") {
                                      title += "<br /> Mood: " + d.mood;
