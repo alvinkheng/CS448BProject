@@ -5,22 +5,9 @@ body {
     color: #4D4D4D;
 }
 
-#chart {
+#chart, #chartWeekly {
     background-color: #E0E0E0;
-    #position: absolute;
-    # top: 0px;
-    #left: 0px;
-    z-index: 1;
-    display: block;
-}
 
-#chartWeekly {
-    background-color: #E0E0E0;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 2;
-    display: none;
 }
 
 h1, h3, h4, h5 {
@@ -43,13 +30,6 @@ a:hover {
 	font-size: bigger;
 }
 
-#graphHeader {
-    color: #FFF;
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration:underline;
-}
-
 .axis path,
 .axis line {
     fill: none;
@@ -61,6 +41,10 @@ a:hover {
 
 .axis text {
 	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.x.axis text {
+    font-size: 15px;
 }
 
 .y.axis text {
