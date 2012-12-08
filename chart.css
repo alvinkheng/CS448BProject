@@ -1,10 +1,13 @@
 body {
 	background-repeat: no-repeat;
 	background-position: center top;
-  font-family: 'Source Sans Pro', sans-serif;
-  color: #4D4D4D;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #4D4D4D;
 }
 
+#chart {
+    background-color: #E0E0E0;
+}
 
 h1, h3, h4, h5 {
 	padding: 2px 2px 2px 2px;
@@ -26,31 +29,24 @@ a:hover {
 	font-size: bigger;
 }
 
-svg {
-    background-color: #E0E0E0;
+#graphHeader {
+    color: #FFF;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration:underline;
 }
 
 .axis path,
 .axis line {
-  fill: none;
-  stroke: #FFF;
-  stroke-width: 1;
-  shape-rendering: crispEdges;
-  display:none;
+    fill: none;
+    stroke: #FFF;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+    display:none;
 }
 
 .axis text {
-    font-size: 10px;
 	font-family: 'Source Sans Pro', sans-serif;
-  	color: #4D4D4D;
-  	font-weight: 300;
-}
-
-.graphHeader text {
-    font-size: 15px;
-    font-weight: bold;
-    fill: #FFF;
-    text-decoration:underline;
 }
 
 .y.axis text {
@@ -58,18 +54,9 @@ svg {
     font-weight: bold;
     fill: #FFF;
 }
-    
+ 
 .data-point {
     stroke: #666666;
     stroke-width: 1.5;
     fill: #FFF;
-}
-
-#chart {
-		padding-bottom: 0px;
-        margin-bottom: 0px;
-}
-
-.bar {
-    
 }

@@ -13,7 +13,6 @@ var x = d3.scale.linear()
     .range([0, width])
     .nice();
 
-//Y axis: Time
 var y = d3.time.scale()
     .range([0, height]);
 
@@ -31,6 +30,7 @@ var svg = d3.select("#chart").append("svg")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+//Normalizes the bpm then uses that value to interpolate between green and purple
 var lowBPM = 0;
 var highBPM = 20;
 function getBPMColor(bpm) {
@@ -60,50 +60,52 @@ d3.csv("sampleData.csv", function(data, error) {
         dailyData[numDays].push(d);
     });
     
+    var currDayData = dailyData[0];
+    
+    //Set date as title
+    d3.select("#graphHeader")
+        .text(currDayData[0].date.toDateString());
+    
     //set y scales 
-    y.domain(d3.extent(dailyData[0], function(d) { return d.date; }));
+    y.domain(d3.extent(currDayData, function(d) { return d.date; }));
     
     //variables for formatting
-    var yOffset = 10;
     var barHeight = 10;
     var yAxisOffset = 28;
+    var xOrigin = x(-xDomain/4.0);
+    var barWidth = x(-xDomain/2.0);
        
     //append one day's data to graph
     svg.selectAll(".bar")
-        .data(dailyData[0])
+        .data(currDayData)
       .enter().append("rect")
-        .attr("transform", "translate(0, "+yOffset+")")
         .attr("class", "bar")
-        .attr("x", x(-xDomain/4.0))
-        .attr("width", x(-xDomain/2.0))
+        .attr("x", xOrigin)
+        .attr("width", barWidth)
         .attr("y", function(d) { return y(d.date); })
         .attr("height", barHeight)
         .attr("style", function(d) {
             var color = getBPMColor(d.bpm);
             return "fill:rgb("+color.r+","+color.g+","+color.b+")";
         });
-       
-    svg.append("g")
-        .attr("class", "graphHeader")
-    .append("text")
-        .text(dailyData[0][0].date.toDateString());
     
+    //Draw y axis time labels
     svg.append("g")
         .attr("class", "y axis")
         .call(yAxis)
-        .attr("transform", "translate("+((width/2) - yAxisOffset)+", "+yOffset+")");
+        .attr("transform", "translate("+((width/2) - yAxisOffset)+")");
     
     //tool tips
     var dataCirclesGroup = svg.append('svg:g');
     var circles = dataCirclesGroup.selectAll(".data-point")
-       .data(dailyData[0]);
+       .data(currDayData);
        
     circles.enter()
        .append("svg:circle")
        .attr("class", "data-point")
        .attr("r", function(d) { return (d.calendar_event != "" || d.notes != "") ? 8 : 0; })
        .attr("cx", function(d) { if (d.calendar_event != "" || d.notes != "") return x(-xDomain/4); })
-       .attr("cy", function(d) { if (d.calendar_event != "" || d.notes != "") return yOffset+y(d.date); })
+       .attr("cy", function(d) { if (d.calendar_event != "" || d.notes != "") return y(d.date); })
        
        
        $('svg circle').tipsy({
