@@ -53,7 +53,7 @@ d3.csv("sampleData.csv", function(data, error) {
     var day = data[0].date.getDate();
     var title = month + " " + day + " - " + month + " " + (day+7);
     
-    d3.select("#pageTitle")
+    d3.select("#weeklyTitle")
         .text(title);
     
     //set x and y scales

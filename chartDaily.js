@@ -114,7 +114,7 @@ d3.csv("sampleData.csv", function(data, error) {
     var currDayData = dailyData[0];
     
     //Set date as title
-    d3.select("#pageTitle")
+    d3.select("#dailyTitle")
         .text(currDayData[0].date.toDateString());
     
     //set y scales 
@@ -158,34 +158,24 @@ d3.csv("sampleData.csv", function(data, error) {
        .attr("cx", function(d) { if (d.calendar_event != "" || d.notes != "") return x(-X_DOMAIN/4); })
        .attr("cy", function(d) { if (d.calendar_event != "" || d.notes != "") return y(d.date); })
        
-       
-       $('svg circle').tipsy({
-                             gravity: 'e',
-                             html: true,
-                             fade: true,              
-                             title: function() {
-                                 var d = this.__data__;
-                                 
-                                 var title = d.bpm + " bpm";
-                                 if (d.location != "") {
-                                    title += "<br /> @ " + d.location;
-                                 }
-                                 if (d.notes != "") {
-                                     title += "<br /> Notes: " + d.notes;
-                                 }
-                                 if (d.calendar_event != "") {
-                                     title += "<br /> Calendar: " + d.calendar_event;
-                                 }
-                                 if (d.mood != "") {
-                                     title += "<br /> Mood: " + d.mood;
-                                 }
-                                 if (d.company != "alone") {
-                                     title += "<br /> With: " + d.company;
-                                 }
-                                 if (d.photo != "") {
-                                     title += "<br /> <img src="+d.photo+" />";
-                                 }
-                                 return title ;
+   $('svg circle').tipsy({
+                         gravity: 'e',
+                         html: true,
+                         fade: true,
+                         title: function() {
+                             var d = this.__data__;
+                             
+                             var title = d.bpm + " bpm";
+                             if (d.location != "") {
+                                title += "<br /> @ " + d.location;
                              }
-                             });
+                             if (d.notes != "") {
+                                 title += "<br /> Notes: " + d.notes;
+                             }
+                             if (d.calendar_event != "") {
+                                 title += "<br /> Calendar: " + d.calendar_event;
+                             }
+                             return title ;
+                         }
+                         });
 });

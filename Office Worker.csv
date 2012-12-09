@@ -1,0 +1,182 @@
+Day,Time,BPM,Location,Activity,People,Mood,Period,Zone,Sighes,Laughs,Speech
+Monday,0.375,6.5,Home,Shower,Alone,Okay,Morning,Calm,0,0,0
+Monday,0.378472222,6.166666667,Home,Shower,Alone,Okay,Morning,Calm,1,0,0
+Monday,0.381944444,5.166666667,Home,Shower,Alone,Okay,Morning,Calm,1,0,0
+Monday,0.385416667,5.166666667,Home,Breakfast,Alone,Content,Morning,Calm,1,0,0
+Monday,0.388888889,7.166666667,Home,Breakfast,Alone,Content,Morning,Calm,0,0,0
+Monday,0.392361111,7.166666667,Home,Breakfast,Alone,Content,Morning,Calm,1,0,0
+Monday,0.395833333,5.5,Home,Breakfast,Alone,Content,Morning,Calm,1,0,2
+Monday,0.399305556,4.616666667,Car,Driving,Alone,Content,Morning,Calm,0,0,0
+Monday,0.402777778,5.366666667,Car,Driving,Alone,Content,Morning,Calm,0,0,1
+Monday,0.40625,8.266666667,Car,Driving,Alone,Content,Morning,Normal,1,0,2
+Monday,0.409722222,8.316666667,Car,Driving,Alone,Content,Morning,Normal,0,0,3
+Monday,0.413194444,9.466666667,Car,Driving,Alone,Content,Morning,Normal,1,0,0
+Monday,0.416666667,7.666666667,Work: Desk,Computer,Co-workers,Content,Morning,Normal,0,0,4
+Monday,0.420138889,8.133333333,Work: Desk,Computer,Co-workers,Content,Morning,Normal,1,0,3
+Monday,0.423611111,9.933333333,Work: Desk,Computer,Co-workers,Content,Morning,Normal,1,0,3
+Monday,0.427083333,11.06666667,Work: Desk,Computer,Co-workers,Content,Morning,Normal,0,0,2
+Monday,0.430555556,10.86666667,Work: Conference Room,Meeting,Boss,Anxious,Morning,Normal,0,0,2
+Monday,0.434027778,10.46666667,Work: Conference Room,Meeting,Boss,Anxious,Morning,Normal,0,0,2
+Monday,0.4375,9.4,Work: Conference Room,Meeting,Boss,Anxious,Morning,Normal,0,0,0
+Monday,0.440972222,8.133333333,Work: Conference Room,Meeting,Boss,Anxious,Morning,Normal,0,0,3
+Monday,0.444444444,6.533333333,Work: Conference Room,Meeting,Boss,Anxious,Morning,Calm,0,0,2
+Monday,0.447916667,7.283333333,Work: Conference Room,Meeting,Boss,Anxious,Morning,Calm,1,0,2
+Monday,0.451388889,7.666666667,Work: Conference Room,Meeting,Boss,Anxious,Morning,Normal,2,0,0
+Monday,0.454861111,7.916666667,Work: Conference Room,Meeting,Boss,Anxious,Morning,Normal,0,0,1
+Monday,0.458333333,8.15,Work: Desk,Computer,Alone,Bored,Morning,Normal,0,0,0
+Monday,0.461805556,9.9,Work: Desk,Computer,Alone,Bored,Morning,Normal,1,0,1
+Monday,0.465277778,10.65,Work: Desk,Computer,Alone,Bored,Morning,Normal,3,0,1
+Monday,0.46875,9.4,Work: Desk,Computer,Alone,Bored,Morning,Normal,2,0,0
+Monday,0.472222222,8.6,Work: Desk,Computer,Alone,Bored,Morning,Normal,3,0,1
+Monday,0.475694444,7.35,Work: Desk,Computer,Alone,Bored,Morning,Calm,3,0,0
+Monday,0.479166667,7.1,Work: Desk,Computer,Alone,Bored,Morning,Calm,3,0,0
+Monday,0.482638889,7,Work: Desk,Computer,Alone,Bored,Morning,Calm,3,0,1
+Monday,0.486111111,9.083333333,Work: Desk,Computer,Alone,Bored,Morning,Normal,1,0,1
+Monday,0.489583333,11.51666667,Work: Desk,Computer,Alone,Bored,Morning,Normal,1,0,1
+Monday,0.493055556,12.86666667,Work: Desk,Computer,Alone,Bored,Morning,Normal,2,0,0
+Monday,0.496527778,11.25,Work: Desk,Computer,Alone,Bored,Morning,Normal,0,2,0
+Monday,0.5,9.75,Restaurant / Café: Plutos,Lunch,Co-workers,Happy,Afternoon,Normal,1,4,1
+Monday,0.503472222,9.766666667,Restaurant / Café: Plutos,Lunch,Co-workers,Happy,Afternoon,Normal,1,4,2
+Monday,0.506944444,11.5,Restaurant / Café: Plutos,Lunch,Co-workers,Happy,Afternoon,Normal,0,4,2
+Monday,0.510416667,14.46666667,Restaurant / Café: Plutos,Lunch,Co-workers,Happy,Afternoon,Normal,0,4,3
+Monday,0.513888889,15.18333333,Restaurant / Café: Plutos,Lunch,Co-workers,Happy,Afternoon,Normal,1,5,1
+Monday,0.517361111,14.76666667,Restaurant / Café: Plutos,Lunch,Co-workers,Happy,Afternoon,Normal,1,5,2
+Monday,0.520833333,14.95,Restaurant / Café: Plutos,Lunch,Co-workers,Happy,Afternoon,Normal,0,5,0
+Monday,0.524305556,16.43333333,Restaurant / Café: Plutos,Lunch,Co-workers,Happy,Afternoon,Normal,1,4,4
+Monday,0.527777778,16.03333333,Restaurant / Café: Plutos,Lunch,Co-workers,Happy,Afternoon,Normal,1,1,2
+Monday,0.53125,14.2,Restaurant / Café: Plutos,Lunch,Co-workers,Happy,Afternoon,Normal,1,3,4
+Monday,0.534722222,13.6,Restaurant / Café: Plutos,Lunch,Co-workers,Happy,Afternoon,Normal,0,3,0
+Monday,0.538194444,14.56666667,Restaurant / Café: Plutos,Lunch,Co-workers,Happy,Afternoon,Normal,1,0,1
+Monday,0.541666667,14.76666667,Work: Desk,Computer,Alone,Okay,Afternoon,Normal,1,0,0
+Monday,0.545138889,14.4,Work: Desk,Computer,Alone,Okay,Afternoon,Normal,0,0,0
+Monday,0.548611111,15.16666667,Work: Desk,Computer,Alone,Okay,Afternoon,Normal,2,0,0
+Monday,0.552083333,17.43333333,Work: Desk,Computer,Alone,Okay,Afternoon,Normal,0,0,0
+Monday,0.555555556,17.76666667,Work: Desk,Computer,Alone,Okay,Afternoon,Elevated,1,0,0
+Monday,0.559027778,17.86666667,Work: Desk,Computer,Alone,Content,Afternoon,Elevated,0,0,0
+Monday,0.5625,17.5,Work: Desk,Computer,Alone,Content,Afternoon,Elevated,0,0,3
+Monday,0.565972222,17.66666667,Restaurant / Café: Starbucks,Coffee Break,Co-workers,Content,Afternoon,Elevated,1,3,1
+Monday,0.569444444,17.9,Restaurant / Café: Starbucks,Coffee Break,Co-workers,Content,Afternoon,Elevated,1,4,5
+Monday,0.572916667,16.46666667,Restaurant / Café: Starbucks,Coffee Break,Co-workers,Content,Afternoon,Normal,0,3,4
+Monday,0.576388889,15.66666667,Restaurant / Café: Starbucks,Coffee Break,Co-workers,Content,Afternoon,Normal,0,4,3
+Monday,0.579861111,16.26666667,Restaurant / Café: Starbucks,Coffee Break,Co-workers,Content,Afternoon,Normal,0,3,2
+Monday,0.583333333,19.06666667,Restaurant / Café: Starbucks,Coffee Break,Co-workers,Content,Afternoon,Elevated,1,1,0
+Monday,0.586805556,19.33333333,Work: Desk,Computer,Alone,Good,Afternoon,Elevated,0,0,0
+Monday,0.590277778,19.8,Work: Desk,Computer,Alone,Good,Afternoon,Elevated,3,0,1
+Monday,0.59375,17.6,Work: Desk,Computer,Alone,Good,Afternoon,Elevated,3,0,1
+Monday,0.597222222,19.96666667,Work: Desk,Computer,Alone,Good,Afternoon,Elevated,1,0,1
+Monday,0.600694444,19.13333333,Work: Desk,Computer,Alone,Good,Afternoon,Elevated,2,0,1
+Monday,0.604166667,20.1,Work: Desk,Computer,Alone,Good,Afternoon,Elevated,3,0,1
+Monday,0.607638889,17.73333333,Work: Desk,Computer,Alone,Good,Afternoon,Elevated,2,0,0
+Monday,0.611111111,18.5,Work: Desk,Computer,Alone,Excited,Afternoon,Elevated,2,0,0
+Monday,0.614583333,18.53333333,Work: Desk,Computer,Alone,Excited,Afternoon,Elevated,1,0,0
+Monday,0.618055556,18.9,Work: Desk,Computer,Alone,Excited,Afternoon,Elevated,0,0,0
+Monday,0.621527778,18,Work: Desk,Computer,Alone,Excited,Afternoon,Elevated,1,0,0
+Monday,0.625,18.8,Work: Conference Room,Meeting,Clients,Excited,Afternoon,Elevated,0,0,1
+Monday,0.628472222,19.76666667,Work: Conference Room,Meeting,Clients,Excited,Afternoon,Elevated,1,0,0
+Monday,0.631944444,20.53333333,Work: Conference Room,Meeting,Clients,Excited,Afternoon,Elevated,0,0,2
+Monday,0.635416667,18.26666667,Work: Conference Room,Meeting,Clients,Excited,Afternoon,Elevated,0,0,2
+Monday,0.638888889,15.66666667,Work: Conference Room,Meeting,Clients,Excited,Afternoon,Normal,1,0,5
+Monday,0.642361111,14.8,Work: Conference Room,Meeting,Clients,Excited,Afternoon,Normal,0,0,1
+Monday,0.645833333,16.43333333,Work: Conference Room,Meeting,Clients,Excited,Afternoon,Normal,1,0,1
+Monday,0.649305556,16.86666667,Work: Desk,Computer,Alone,Excited,Afternoon,Normal,0,0,0
+Monday,0.652777778,16.3,Work: Desk,Computer,Alone,Excited,Afternoon,Normal,2,0,1
+Monday,0.65625,16.5,Work: Desk,Computer,Alone,Excited,Afternoon,Normal,0,0,1
+Monday,0.659722222,17.53333333,Work: Desk,Computer,Alone,Happy,Afternoon,Elevated,3,0,1
+Monday,0.663194444,17.91666667,Work: Desk,Computer,Alone,Happy,Afternoon,Elevated,3,0,1
+Monday,0.666666667,14.91666667,Work: Desk,Computer,Alone,Happy,Afternoon,Normal,0,0,1
+Monday,0.670138889,12.18333333,Work: Desk,Computer,Alone,Happy,Afternoon,Normal,1,0,1
+Monday,0.673611111,11.83333333,Work: Desk,Computer,Alone,Happy,Afternoon,Normal,3,0,1
+Monday,0.677083333,13.21666667,Work: Desk,Computer,Alone,Happy,Afternoon,Normal,0,0,0
+Monday,0.680555556,15.2,Work: Desk,Computer,Alone,Happy,Afternoon,Normal,3,0,1
+Monday,0.684027778,14.63333333,Work: Desk,Computer,Alone,Content,Afternoon,Normal,2,0,1
+Monday,0.6875,12.91666667,Work: Desk,Computer,Alone,Content,Afternoon,Normal,3,0,1
+Monday,0.690972222,11.31666667,Car,Driving,Alone,Content,Afternoon,Normal,1,0,1
+Monday,0.694444444,10.25,Car,Driving,Alone,Content,Afternoon,Normal,1,0,2
+Monday,0.697916667,10.38333333,Car,Driving,Alone,Content,Afternoon,Normal,0,1,2
+Monday,0.701388889,10.11666667,Car,Driving,Alone,Content,Afternoon,Normal,0,0,4
+Monday,0.704861111,11.06666667,Gym,Workout,Friends,Happy,Afternoon,Normal,0,0,2
+Monday,0.708333333,10.11666667,Gym,Workout,Friends,Happy,Evening,Normal,0,1,3
+Monday,0.711805556,9.883333333,Gym,Workout,Friends,Happy,Evening,Normal,0,1,2
+Monday,0.715277778,7.416666667,Gym,Workout,Friends,Happy,Evening,Calm,0,2,3
+Monday,0.71875,7.45,Gym,Workout,Friends,Happy,Evening,Calm,0,1,2
+Monday,0.722222222,6.683333333,Car,Driving,Alone,Happy,Evening,Calm,0,0,2
+Monday,0.725694444,8.55,Car,Driving,Alone,Happy,Evening,Normal,0,1,0
+Monday,0.729166667,9.016666667,Car,Driving,Alone,Content,Evening,Normal,0,0,1
+Monday,0.732638889,9.783333333,Restaurant / Café: Tamarine,Dinner,Girlfriend/Boyfriend,Content,Evening,Normal,0,2,3
+Monday,0.736111111,8.816666667,Restaurant / Café: Tamarine,Dinner,Girlfriend/Boyfriend,Content,Evening,Normal,0,2,1
+Monday,0.739583333,9.216666667,Restaurant / Café: Tamarine,Dinner,Girlfriend/Boyfriend,Content,Evening,Normal,0,1,2
+Monday,0.743055556,8.916666667,Restaurant / Café: Tamarine,Dinner,Girlfriend/Boyfriend,Happy,Evening,Normal,0,1,4
+Monday,0.746527778,8.316666667,Restaurant / Café: Tamarine,Dinner,Girlfriend/Boyfriend,Happy,Evening,Normal,0,2,2
+Monday,0.75,8.25,Restaurant / Café: Tamarine,Dinner,Girlfriend/Boyfriend,Happy,Evening,Normal,0,2,2
+Monday,0.753472222,8.15,Restaurant / Café: Tamarine,Dinner,Girlfriend/Boyfriend,Happy,Evening,Normal,0,0,3
+Monday,0.756944444,9.216666667,Restaurant / Café: Tamarine,Dinner,Girlfriend/Boyfriend,Happy,Evening,Normal,0,2,2
+Monday,0.760416667,10.31666667,Restaurant / Café: Tamarine,Dinner,Girlfriend/Boyfriend,Happy,Evening,Normal,0,2,3
+Monday,0.763888889,11.15,Restaurant / Café: Tamarine,Dinner,Girlfriend/Boyfriend,Happy,Evening,Normal,0,0,2
+Monday,0.767361111,10.88333333,Restaurant / Café: Tamarine,Dinner,Girlfriend/Boyfriend,Happy,Evening,Normal,0,1,4
+Monday,0.770833333,8.783333333,Restaurant / Café: Tamarine,Dinner,Girlfriend/Boyfriend,Happy,Evening,Normal,0,1,1
+Monday,0.774305556,9.883333333,Restaurant / Café: Tamarine,Dinner,Girlfriend/Boyfriend,Happy,Evening,Normal,0,1,4
+Monday,0.777777778,10.38333333,Restaurant / Café: Tamarine,Dinner,Girlfriend/Boyfriend,Happy,Evening,Normal,0,2,3
+Monday,0.78125,12.58333333,Restaurant / Café: Tamarine,Dinner,Girlfriend/Boyfriend,Happy,Evening,Normal,0,0,1
+Monday,0.784722222,10.75,Restaurant / Café: Tamarine,Dinner,Girlfriend/Boyfriend,Happy,Evening,Normal,0,1,2
+Monday,0.788194444,9.816666667,Restaurant / Café: Tamarine,Dinner,Girlfriend/Boyfriend,Happy,Evening,Normal,0,1,4
+Monday,0.791666667,9.183333333,Car,Driving,Alone,Content,Evening,Normal,1,0,0
+Monday,0.795138889,9.05,Car,Driving,Alone,Content,Evening,Normal,0,1,1
+Monday,0.798611111,9.05,Car,Driving,Alone,Content,Evening,Normal,0,1,0
+Monday,0.802083333,8.883333333,Car,Driving,Alone,Content,Evening,Normal,1,1,1
+Monday,0.805555556,10.71666667,Car,Driving,Alone,Content,Evening,Normal,1,0,1
+Monday,0.809027778,10.71666667,Home,TV,Alone,Content,Evening,Normal,1,1,0
+Monday,0.8125,10.91666667,Home,TV,Alone,Content,Evening,Normal,1,0,1
+Monday,0.815972222,9.016666667,Home,TV,Alone,Content,Evening,Normal,0,1,0
+Monday,0.819444444,10.28333333,Home,TV,Alone,Content,Evening,Normal,0,0,1
+Monday,0.822916667,8.216666667,Home,TV,Alone,Content,Evening,Normal,1,0,0
+Monday,0.826388889,8.416666667,Home,TV,Alone,Content,Evening,Normal,0,0,0
+Monday,0.829861111,8.183333333,Home,Computer,Alone,Content,Evening,Normal,1,1,1
+Monday,0.833333333,10.05,Home,Computer,Alone,Okay,Evening,Normal,1,0,0
+Monday,0.836805556,9.45,Home,Computer,Alone,Okay,Evening,Normal,1,1,0
+Monday,0.840277778,8.716666667,Home,Computer,Alone,Okay,Evening,Normal,0,1,1
+Monday,0.84375,7.75,Home,Computer,Alone,Okay,Evening,Normal,0,0,0
+Monday,0.847222222,10.45,Home,Computer,Alone,Okay,Evening,Normal,1,0,0
+Monday,0.850694444,11.35,Home,Computer,Alone,Okay,Evening,Normal,1,1,0
+Monday,0.854166667,11.98333333,Home,Computer,Alone,Okay,Evening,Normal,0,1,1
+Monday,0.857638889,10.18333333,Home,Computer,Alone,Okay,Evening,Normal,1,1,1
+Monday,0.861111111,10.85,Home,Computer,Alone,Okay,Evening,Normal,1,1,1
+Monday,0.864583333,10.81666667,Home,Computer,Alone,Okay,Evening,Normal,0,0,1
+Monday,0.868055556,12.28333333,Home,Computer,Alone,Okay,Evening,Normal,0,1,1
+Monday,0.871527778,11.95,Home,Computer,Alone,Okay,Evening,Normal,1,1,0
+Monday,0.875,11.95,Home,Computer,Alone,Content,Evening,Normal,1,1,1
+Monday,0.878472222,11.71666667,Home,Computer,Alone,Content,Evening,Normal,0,0,0
+Monday,0.881944444,10.35,Home,Computer,Alone,Content,Evening,Normal,1,0,0
+Monday,0.885416667,9.183333333,Home,Computer,Alone,Content,Evening,Normal,1,1,0
+Monday,0.888888889,8.316666667,Home,Computer,Alone,Content,Evening,Normal,1,0,0
+Monday,0.892361111,8.15,Home,Computer,Alone,Content,Evening,Normal,1,1,1
+Monday,0.895833333,9.916666667,Home,Computer,Alone,Content,Evening,Normal,1,0,1
+Monday,0.899305556,10.75,Home,TV,Alone,Content,Evening,Normal,1,0,1
+Monday,0.902777778,11.98333333,Home,TV,Alone,Content,Evening,Normal,0,1,1
+Monday,0.90625,10.48333333,Home,TV,Alone,Content,Evening,Normal,0,0,1
+Monday,0.909722222,9.216666667,Home,TV,Alone,Content,Evening,Normal,1,0,1
+Monday,0.913194444,7.65,Home,TV,Alone,Content,Evening,Normal,0,1,1
+Monday,0.916666667,9.15,Home,Bed,Alone,Content,Evening,Normal,1,0,1
+Monday,0.920138889,9.683333333,Home,Bed,Alone,Relaxed,Evening,Normal,0,1,1
+Monday,0.923611111,11.51666667,Home,Bed,Alone,Relaxed,Evening,Normal,1,1,0
+Monday,0.927083333,11.28333333,Home,Bed,Alone,Relaxed,Evening,Normal,0,1,0
+Monday,0.930555556,11.98333333,Home,Bed,Alone,Relaxed,Evening,Normal,0,0,0
+Monday,0.934027778,11.01666667,Home,Bed,Alone,Relaxed,Evening,Normal,1,1,1
+Monday,0.9375,12.15,Home,Bed,Alone,Relaxed,Evening,Normal,1,1,0
+Monday,0.940972222,10.48333333,Home,Bed,Alone,Relaxed,Evening,Normal,1,1,0
+Monday,0.944444444,10.51666667,Home,Bed,Alone,Relaxed,Evening,Normal,1,1,0
+Monday,0.947916667,9.616666667,Home,Bed,Alone,Relaxed,Evening,Normal,0,0,1
+Monday,0.951388889,11.48333333,Home,Bed,Alone,Relaxed,Evening,Normal,0,0,0
+Monday,0.954861111,10.41666667,Home,Bed,Alone,Relaxed,Evening,Normal,1,1,0
+Monday,0.958333333,8.983333333,Home,Bed,Alone,Relaxed,Evening,Normal,1,1,1
+Monday,0.961805556,7.15,Home,Bed,Alone,Relaxed,Evening,Calm,1,0,0
+Monday,0.965277778,6.75,Home,Bed,Alone,Relaxed,Evening,Calm,1,1,1
+Monday,0.96875,8.983333333,Home,Bed,Alone,Relaxed,Evening,Normal,1,1,0
+Monday,0.972222222,10.38333333,Home,Bed,Alone,Relaxed,Evening,Normal,1,0,0
+Monday,0.975694444,11.98333333,Home,Bed,Alone,Relaxed,Evening,Normal,1,1,0
+Monday,0.979166667,10.81666667,Home,Bed,Alone,Relaxed,Evening,Normal,0,0,1
+Monday,0.982638889,9.783333333,Home,Bed,Alone,Relaxed,Evening,Normal,0,1,1
+Monday,0.986111111,9.883333333,Home,Bed,Alone,Relaxed,Evening,Normal,0,1,1
+Monday,0.989583333,8.55,Home,Bed,Alone,Relaxed,Evening,Normal,0,0,0
+Monday,0.993055556,8.883333333,Home,Bed,Alone,Relaxed,Evening,Normal,0,0,0
+Monday,0.996527778,8.05,Home,Bed,Alone,Relaxed,Evening,Normal,1,0,1
+Tuesday,0.375,9.15,Home,Bed,Alone,Relaxed,Evening,Normal,,,

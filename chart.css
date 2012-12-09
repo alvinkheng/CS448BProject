@@ -5,7 +5,7 @@ body {
     color: #4D4D4D;
 }
 
-#chart, #chartWeekly {
+#chart, #chartWeekly, #chartInstant {
     background-color: #E0E0E0;
 
 }
