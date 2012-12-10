@@ -1,4 +1,4 @@
-var margin = {top: 20, right: 20, bottom: 20, left: 60},
+var margin = {top: 30, right: 20, bottom: 20, left: 60},
     width = 640 - margin.left - margin.right,
     height = 480 - margin.top - margin.bottom;
 
@@ -15,7 +15,7 @@ var y = d3.time.scale()
 var xAxis = d3.svg.axis()
     .scale(x)
     .ticks(d3.time.days)
-    .orient("bottom");
+    .orient("top");
 
 var yAxis = d3.svg.axis()
     .scale(y)
