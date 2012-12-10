@@ -71,16 +71,16 @@ date,bpm,location,photo,notes,calendar_event,mood,company
 2012-12-04 07:30:00 PM,8.615584,Stanford CA,,,,,alone
 2012-12-04 07:40:00 PM,8.315584,Stanford CA,,,,,alone
 2012-12-04 07:50:00 PM,8.015584,Stanford CA,,,,,alone
-2012-12-04 08:00:00 PM,7.778675,Stanford CA,,,,#00FF00,friends
+2012-12-04 08:00:00 PM,7.778675,Stanford CA,,,,#00FF00-1,friends
 2012-12-05 08:00:00 AM,5.220123,Stanford CA,,,,,alone
 2012-12-05 12:00:00 PM,4.821977,Stanford CA,,woke up late!,,,alone
 2012-12-05 04:00:00 PM,4.413950,Stanford CA,,,,,alone
 2012-12-05 08:00:00 PM,5.220100,Stanford CA,,,,,alone
-2012-12-06 08:00:00 AM,3.613914,Stanford CA,,,,#00FF00,friends
+2012-12-06 08:00:00 AM,3.613914,Stanford CA,,,,#00FF00-2,friends
 2012-12-06 12:00:00 PM,4.015460,Stanford CA,,,,,alone
 2012-12-06 04:00:00 PM,14.846783,Stanford CA,,afternoon nap,,,alone
 2012-12-06 08:00:00 PM,12.849441,Stanford CA,,,,,alone
 2012-12-07 08:00:00 AM,14.846783,Stanford CA,,,,,alone
-2012-12-07 12:00:00 PM,13.241725,Stanford CA,,,,#FF0000,alone
+2012-12-07 12:00:00 PM,13.241725,Stanford CA,,,,#FF0000-3,alone
 2012-12-07 04:00:00 PM,8.766399,Stanford CA,,,CS 448B,,alone
 2012-12-07 08:00:00 PM,10.841806,Stanford CA,,,,,alone

@@ -8,6 +8,7 @@ var X_DOMAIN = 5;
 var LOW_BPM = 0;
 var HIGH_BPM = 20;
 var _orientation = "portrait";
+var _moodRadii = [4, 8, 16, 32];
 
 function portraitMode() {  
 }
@@ -86,9 +87,8 @@ d3.csv("sampleData.csv", function(data, error) {
     
     //variables for formatting
     var barHeight = 10;
-    var yAxisOffset = 28;
-    var xOrigin = x(-X_DOMAIN/4.0);
-    var barWidth = x(-X_DOMAIN/2.0);
+    var xOrigin = x(-X_DOMAIN/3.0); //x(0) is center of graph area
+    var barWidth = x(-X_DOMAIN/3.0);
        
     //append one day's data to graph
     svg.selectAll(".bar")
@@ -108,70 +108,71 @@ d3.csv("sampleData.csv", function(data, error) {
     svg.append("g")
         .attr("class", "y axis")
         .call(yAxis)
-       
     
-    //tool tips
-    var dataCirclesGroup = svg.append('svg:g');
+    //contextual data
+    var contextGroup = svg.append('svg:g');
     
     var dataWithEvents = [];
     var dataWithMoods = [];
     var dataWithPhotos = [];
    
     currDayData.forEach(function(d) {
-                        if (d.calendar_event != "" || d.notes != "") {
-                            dataWithEvents.push(d);
-                        }
-                        if (d.mood != "") {
-                            dataWithMoods.push(d);
-                        }
-                        if (d.photo != "") {
-                            dataWithPhotos.push(d);
-                        }
-                        });
+        if (d.calendar_event != "" || d.notes != "") {
+            dataWithEvents.push(d);
+        }
+        if (d.mood != "") {
+            dataWithMoods.push(d);
+        }
+        if (d.photo != "") {
+            dataWithPhotos.push(d);
+        }
+    });
        
     //Create boxes for every entry that has a calendar event or note
-    var eventBox = dataCirclesGroup.selectAll(".eventBox")
+    var eventBox = contextGroup.selectAll(".eventBox")
        .data(dataWithEvents);
        
+    //Boxes
     eventBox.enter()
        .append("svg:rect")
        .attr("class", "eventBox")
-       .attr("width", width/3)
+       .attr("width", x(X_DOMAIN)/3)
        .attr("height", 50)
-       .attr("x", x(-X_DOMAIN) + 5)
+       .attr("x", x(-X_DOMAIN))
        .attr("y", function(d) { return y(d.date)})
        
+    //Text inside boxes
     eventBox.enter()
        .append("text")
        .attr("class", "eventBoxText")
-       .attr("width", width/3)
+       .attr("width", x(X_DOMAIN)/3)
        .attr("height", 50)
        .attr("x", x(-X_DOMAIN) + 10)
        .attr("y", function(d) { return y(d.date) + 12})
        .text(function(d) { return (d.calendar_event != "") ? d.calendar_event : d.notes;});
             
     //Create mood circles
-    var moodCircles = dataCirclesGroup.selectAll(".moodLine")
+    var moodCircles = contextGroup.selectAll(".moodLine")
         .data(dataWithMoods);
              
     moodCircles.enter()
        .append("svg:line")
        .attr("class", "moodLine")
-       .attr("x1", x(X_DOMAIN/4))
-       .attr("x2", x(X_DOMAIN/4)+30)
+       .attr("x1", x(X_DOMAIN/3))
+       .attr("x2", x(X_DOMAIN/3)+30)
        .attr("y1", function(d) { return y(d.date)})
        .attr("y2", function(d) { return y(d.date)});
        
     moodCircles.enter()
        .append("svg:circle")
         .attr("class", "moodCircle")
-        .attr("fill", function(d) {return d.mood;})
-        .attr("r", 8)
-        .attr("cx", x(X_DOMAIN/4)+38)
+        .attr("fill", function(d) {return d.mood.substring(0,7);})
+        .attr("r", function(d){return _moodRadii[d.mood.substring(8)]})
+        .attr("cx", x(X_DOMAIN/3)+30)
         .attr("cy", function(d) { return y(d.date)})
                    
     //create photo circles
-    var photoCircles = dataCirclesGroup.selectAll(".photoCircle")
+    var photoCircles = contextGroup.selectAll(".photoCircle")
        .data(dataWithPhotos);
        
     photoCircles.enter()
@@ -188,16 +189,16 @@ d3.csv("sampleData.csv", function(data, error) {
     photoCircles.enter()
        .append("svg:line")
        .attr("class", "moodLine")
-       .attr("x1", x(X_DOMAIN/4))
-       .attr("x2", x(X_DOMAIN/4)+30)
+       .attr("x1", x(X_DOMAIN/3))
+       .attr("x2", x(X_DOMAIN/3)+30)
        .attr("y1", function(d) { return y(d.date)})
        .attr("y2", function(d) { return y(d.date)});
 
     photoCircles.enter()
        .append("svg:circle")
        .attr("class", "photoCircle")
-       .attr("r", 16)
-       .attr("cx", x(X_DOMAIN/4)+46)
+       .attr("r", 32)
+       .attr("cx", x(X_DOMAIN/3)+62)
        .attr("cy", function(d) { return y(d.date)})
        .attr("fill", function(d) {return "url(#photo)";});
 });
