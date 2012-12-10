@@ -1,5 +1,5 @@
 var margin = {top: 20, right: 20, bottom: 20, left: 60},
-    width = 480 - margin.left - margin.right,
+    width = 320 - margin.left - margin.right,
     height = 320 - margin.top - margin.bottom;
 
 var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -129,6 +129,9 @@ d3.csv("sampleData.csv", function(data, error) {
             .attr("style", function(d) {
                 var color = getBPMColor(d.bpm);
                 return "fill:rgb("+color.r+","+color.g+","+color.b+")";
+            })
+            .on("click", function(d) { 
+                window.location.replace('dailyView.html?day='+d.date.getDate());
             });
     });
     
