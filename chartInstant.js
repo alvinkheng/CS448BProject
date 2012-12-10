@@ -1,4 +1,4 @@
-var margin = {top: 20, right: 20, bottom: 20, left: 20},
+var margin = {top: 20, right: 20, bottom: 20, left: 30},
 width = 320 - margin.left - margin.right,
 height = 480 - margin.top - margin.bottom;
 
@@ -89,11 +89,18 @@ d3.csv("sampleData.csv", function(data, error) {
     .enter()
     .append("svg:circle")
     .attr("class", "data-point")
-    .attr("r", 4)
+    .attr("r", 16)
     .attr("cx", function(d) { return x(d.date); })
     .attr("cy", function(d) { return y(d.bpm); })
     
+    circles
+    .enter()
+    .append("svg:text")
+    .attr("x", function(d) { return x(d.date)-4; })
+    .attr("y", function(d) { return y(d.bpm)+4; })
+    .text(function(d){return Math.round(d.bpm)});
     
+        
     $('svg circle').tipsy({
         gravity: 'e',
         html: true,

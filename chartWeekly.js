@@ -30,35 +30,60 @@ var svg = d3.select("#chartWeekly").append("svg")
 .append("g")
 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+var _weekIndex = 0;
+
+function getCurrWeek(weeklyData) {
+    var currWeek = [];
+    weeklyData[_weekIndex].forEach(function(d) {
+        currWeek = currWeek.concat(d);
+    });
+    return currWeek;
+}
+
 d3.csv("sampleData.csv", function(data, error) { 
+    var weeklyData = [];
     var dailyData = [[]];
+    var currDay = parseDate(data[data.length-1].date).toDateString();
     var numDays = 0;
-    var currDay = parseDate(data[0].date).getDate();
-    data.forEach(function(d) { 
-        //format date
+    
+    var i = data.length;
+    while(i--) {
+        var d = data[i];
         d.date = parseDate(d.date);
-        //represent bpm as int
         d.bpm = +d.bpm;
-        if (currDay != d.date.getDate()) {
+        
+        if (currDay != d.date.toDateString()) {
             numDays++;
-            dailyData[numDays] = [];
-            currDay = d.date.getDate();
+            if (numDays < 7) {
+                dailyData[numDays] = [];
+            } else {
+                weeklyData.push(dailyData.reverse());
+                dailyData = [[]];
+                numDays = 0;
+            }
+            currDay = d.date.toDateString();
         }
         dailyData[numDays].push(d);
-    });
-
+    }
+    weeklyData.push(dailyData.reverse());
+    
+    var currWeek = getCurrWeek(weeklyData);
     
     //Set date as title
-    var month = monthNames[data[0].date.getMonth()];
-    var day = data[0].date.getDate();
-    var title = month + " " + day + " - " + month + " " + (day+7);
+    var lastDay = data[data.length-1].date; //latest day
+    var oneWeekAgo = new Date(lastDay.getTime() - 1000 * 60 * 60 * 24 * 7);
+    var title = monthNames[oneWeekAgo.getMonth()] + " " + oneWeekAgo.getDate() + " - ";
+    if (lastDay.getMonth() != oneWeekAgo.getMonth()) {
+        title += monthNames[lastDay.getMonth()] + " ";
+    }
+    title += lastDay.getDate();
     
     d3.select("#weeklyTitle")
         .text(title);
     
     //set x and y scales
-    x.domain(d3.extent(data, function(d) { return d.date; }));
-    y.domain([0, d3.max(data, function(d) { return d.bpm; })]);
+    x.domain(d3.extent(currWeek, function(d) { return d.date; }));
+    y.domain([0, d3.max(currWeek, function(d) { return d.bpm; })]);
     
     svg.append("g")
     .attr("class", "x axis")
@@ -74,7 +99,7 @@ d3.csv("sampleData.csv", function(data, error) {
     .style("text-anchor", "end")
     .text("BPM");
     
-    dailyData.forEach(function(day) {
+    weeklyData[_weekIndex].forEach(function(day) {
         svg.append("path")
         .datum(day)
         .attr("class", "line")
@@ -83,7 +108,7 @@ d3.csv("sampleData.csv", function(data, error) {
     
     var dataCirclesGroup = svg.append('svg:g');
     var circles = dataCirclesGroup.selectAll(".data-point")
-    .data(data);
+    .data(currWeek);
     
     circles
     .enter()
