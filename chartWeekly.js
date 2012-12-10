@@ -1,34 +1,31 @@
-var margin = {top: 20, right: 20, bottom: 20, left: 20},
-width = 960 - margin.left - margin.right,
-height = 320 - margin.top - margin.bottom;
+var margin = {top: 20, right: 20, bottom: 20, left: 60},
+    width = 480 - margin.left - margin.right,
+    height = 320 - margin.top - margin.bottom;
 
 var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 var parseDate = d3.time.format("%Y-%m-%d %I:%M:%S %p").parse;
 
 var x = d3.time.scale()
-.range([0, width]);
+    .range([0, width]);
 
-var y = d3.scale.linear()
-.range([height, 0]);
+var y = d3.time.scale()
+    .range([0, height]);
 
 var xAxis = d3.svg.axis()
-.scale(x)
-.orient("bottom");
+    .scale(x)
+    .ticks(d3.time.days)
+    .orient("bottom");
 
 var yAxis = d3.svg.axis()
-.scale(y)
-.orient("left");
-
-var line = d3.svg.line()
-.x(function(d) { return x(d.date); })
-.y(function(d) { return y(d.bpm); });
+    .scale(y)
+    .orient("left");
 
 var svg = d3.select("#chartWeekly").append("svg")
-.attr("width", width + margin.left + margin.right)
-.attr("height", height + margin.top + margin.bottom)
-.append("g")
-.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 var _weekIndex = 0;
 
@@ -40,12 +37,25 @@ function getCurrWeek(weeklyData) {
     return currWeek;
 }
 
+var LOW_BPM = 0;
+var HIGH_BPM = 20;
+
+//Normalizes the bpm then uses that value to interpolate between green and purple
+function getBPMColor(bpm) {
+    var normalizedBPM = Math.max(0, Math.min(bpm/(HIGH_BPM-LOW_BPM), 1));
+    var color = {};
+    color.r = Math.round(normalizedBPM * 255);
+    color.g = Math.round((1-normalizedBPM) * 255);
+    color.b = Math.round(normalizedBPM * 255);
+    return color;
+}
+
 d3.csv("sampleData.csv", function(data, error) { 
     var weeklyData = [];
     var dailyData = [[]];
     var currDay = parseDate(data[data.length-1].date).toDateString();
     var numDays = 0;
-    
+    //Parse data to be separated by weeks and days
     var i = data.length;
     while(i--) {
         var d = data[i];
@@ -77,75 +87,49 @@ d3.csv("sampleData.csv", function(data, error) {
         title += monthNames[lastDay.getMonth()] + " ";
     }
     title += lastDay.getDate();
-    
     d3.select("#weeklyTitle")
         .text(title);
     
     //set x and y scales
-    x.domain(d3.extent(currWeek, function(d) { return d.date; }));
-    y.domain([0, d3.max(currWeek, function(d) { return d.bpm; })]);
+    x.domain(d3.extent(currWeek, function(d) { return new Date(d.date.toDateString()); }));
+    y.domain(d3.extent(weeklyData[_weekIndex][0], function(d) { 
+        var newDate = new Date();
+        newDate.setHours(d.date.getHours());
+        newDate.setMinutes(d.date.getMinutes());
+        return newDate; }));
     
+    //draw x axis
     svg.append("g")
-    .attr("class", "x axis")
-    .call(xAxis)
+        .attr("class", "x axis")
+        .call(xAxis)
     
+    //draw y axis
     svg.append("g")
-    .attr("class", "y axis")
-    .call(yAxis)
-    .append("text")
-    .attr("transform", "rotate(-90)")
-    .attr("y", 6)
-    .attr("dy", ".71em")
-    .style("text-anchor", "end")
-    .text("BPM");
+        .attr("class", "y axis")
+        .call(yAxis)
     
+    //variables for formatting
+    var barHeight = 10;
+    var barWidth = width/8;
+    
+    //append each day's data to graph
     weeklyData[_weekIndex].forEach(function(day) {
-        svg.append("path")
-        .datum(day)
-        .attr("class", "line")
-        .attr("d", line)
-    })
-    
-    var dataCirclesGroup = svg.append('svg:g');
-    var circles = dataCirclesGroup.selectAll(".data-point")
-    .data(currWeek);
-    
-    circles
-    .enter()
-    .append("svg:circle")
-    .attr("class", "data-point")
-    .attr("r", 4)
-    .attr("cx", function(d) { return x(d.date); })
-    .attr("cy", function(d) { return y(d.bpm); })
-    
-    
-    $('svg circle').tipsy({
-        gravity: 'e',
-        html: true,
-        fade: true,              
-        title: function() {
-            var d = this.__data__;
-            
-            var title = "Breath Rate: " + d.bpm + " bpm";
-            if (d.location != "") {
-                title += "<br /> Location: " + d.location;
-            }
-            if (d.notes != "") {
-                title += "<br /> Notes: " + d.notes;
-            }
-            if (d.calendar_event != "") {
-                title += "<br /> Calendar Event: " + d.calendar_event;
-            }
-            if (d.mood != "") {
-                title += "<br /> Mood: " + d.mood;
-            }
-            if (d.company != "alone") {
-                title += "<br /> With: " + d.company;
-            }
-            if (d.photo != "") {
-                title += "<br /> <img src="+d.photo+" />";
-            }
-            return title ;
-        }
+        svg.selectAll(".bars")
+            .data(day)
+            .enter().append("rect")
+            .attr("class", "bar")
+            .attr("x", function(d) { return 5 + x(new Date(d.date.toDateString())); })
+            .attr("width", barWidth)
+            .attr("y", function(d) { 
+                var newDate = new Date();
+                newDate.setHours(d.date.getHours());
+                newDate.setMinutes(d.date.getMinutes());
+                return y(newDate); })
+            .attr("height", barHeight)
+            .attr("style", function(d) {
+                var color = getBPMColor(d.bpm);
+                return "fill:rgb("+color.r+","+color.g+","+color.b+")";
+            });
     });
+    
 });
