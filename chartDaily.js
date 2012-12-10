@@ -8,46 +8,11 @@ var X_DOMAIN = 5;
 var LOW_BPM = 0;
 var HIGH_BPM = 20;
 var _orientation = "portrait";
-var _data;
-var _dailyData;
-var _currDay;
-
-function setCurrDay(day) {
-    _currDay = day;
-}
 
 function portraitMode() {  
-    var currDayData = _dailyData[0];
-    
-    d3.select("#graphHeader")
-        .text(currDayData[0].date.toDateString());
-    
-    y.domain(d3.extent(currDayData, function(d) { return d.date; }));
-    
-    //Transition x-axis
-    svg.select("g.y.axis")
-        .transition()
-        .duration(2500)
-        .call(yAxis);
 }
 
 function landscapeMode() {
-    d3.select("#graphHeader")
-        .text("Weekly View");
-    
-//    d3.select("#chart")
-//        .attr("display", "none");
-//    
-//    d3.select("chartWeekly")
-//        .attr("display", "block");
-    
-    
-    y.domain(d3.extent(_data, function(d) { return d.date; }));
-    //Transition x-axis
-    svg.select("g.y.axis")
-        .transition()
-        .duration(2500)
-        .call(yAxis);
 }
 
 function orientationHandler() {
@@ -97,26 +62,20 @@ function getBPMColor(bpm) {
 }
 
 d3.csv("sampleData.csv", function(data, error) {
-    _data = data;
-    //Split each day into its own bucket
-    var dailyData = [[]];
-    var numDays = 0;
-    var currDay = parseDate(data[0].date).getDate();
-    data.forEach(function(d) { 
+    //get day from url
+    var currDayNumber = (window.location.search != "") ? window.location.search.substring(5) : 4;
+    
+    //Parse out current day's data
+    var currDayData = [];
+    data.forEach(function(d) {
         //format date
         d.date = parseDate(d.date);
         //represent bpm as int
         d.bpm = +d.bpm;
-        if (currDay != d.date.getDate()) {
-            numDays++;
-            dailyData[numDays] = [];
-            currDay = d.date.getDate();
+        if (d.date.getDate() == currDayNumber) {
+            currDayData.push(d);
         }
-        dailyData[numDays].push(d);
     });
-    
-    _dailyData = dailyData;
-    var currDayData = dailyData[0];
     
     //Set date as title
     d3.select("#dailyTitle")
