@@ -1,6 +1,6 @@
 $(window).bind('orientationchange', orientationHandler);
 
-var margin = {top: 20, right: 10, bottom: 20, left: 10},
+var margin = {top: 20, right: 10, bottom: 20, left: 60},
     width = 320 - margin.left - margin.right,
     height = 480 - margin.top - margin.bottom;
 
@@ -10,6 +10,11 @@ var HIGH_BPM = 20;
 var _orientation = "portrait";
 var _data;
 var _dailyData;
+var _currDay;
+
+function setCurrDay(day) {
+    _currDay = day;
+}
 
 function portraitMode() {  
     var currDayData = _dailyData[0];
@@ -73,7 +78,7 @@ var xAxis = d3.svg.axis()
 
 var yAxis = d3.svg.axis()
     .scale(y)
-    .orient("right");
+    .orient("left");
 
 var svg = d3.select("#chartDaily").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -144,38 +149,94 @@ d3.csv("sampleData.csv", function(data, error) {
     svg.append("g")
         .attr("class", "y axis")
         .call(yAxis)
-        .attr("transform", "translate("+((width/2) - yAxisOffset)+")");
+       
     
     //tool tips
     var dataCirclesGroup = svg.append('svg:g');
-    var circles = dataCirclesGroup.selectAll(".data-point")
-       .data(currDayData);
+    
+    var dataWithEvents = [];
+    var dataWithMoods = [];
+    var dataWithPhotos = [];
+   
+    currDayData.forEach(function(d) {
+                        if (d.calendar_event != "" || d.notes != "") {
+                            dataWithEvents.push(d);
+                        }
+                        if (d.mood != "") {
+                            dataWithMoods.push(d);
+                        }
+                        if (d.photo != "") {
+                            dataWithPhotos.push(d);
+                        }
+                        });
        
-    circles.enter()
+    var eventBox = dataCirclesGroup.selectAll(".eventBox")
+       .data(dataWithEvents);
+       
+    eventBox.enter()
+       .append("svg:rect")
+       .attr("class", "eventBox")
+       .attr("width", width/3)
+       .attr("height", 50)
+       .attr("x", x(-X_DOMAIN) + 5)
+       .attr("y", function(d) { return y(d.date)})
+       
+    eventBox.enter()
+       .append("text")
+       .attr("class", "eventBoxText")
+       .attr("width", width/3)
+       .attr("height", 50)
+       .attr("x", x(-X_DOMAIN) + 10)
+       .attr("y", function(d) { return y(d.date) + 12})
+       .text(function(d) { return (d.calendar_event != "") ? d.calendar_event : d.notes;});
+             
+    var moodCircles = dataCirclesGroup.selectAll(".moodLine")
+        .data(dataWithMoods);
+             
+    moodCircles.enter()
+       .append("svg:line")
+       .attr("class", "moodLine")
+       .attr("x1", x(X_DOMAIN/4))
+       .attr("x2", x(X_DOMAIN/4)+30)
+       .attr("y1", function(d) { return y(d.date)})
+       .attr("y2", function(d) { return y(d.date)});
+       
+    moodCircles.enter()
        .append("svg:circle")
-       .attr("class", "data-point")
-       .attr("r", function(d) { return (d.calendar_event != "" || d.notes != "") ? 8 : 0; })
-       .attr("cx", function(d) { if (d.calendar_event != "" || d.notes != "") return x(-X_DOMAIN/4); })
-       .attr("cy", function(d) { if (d.calendar_event != "" || d.notes != "") return y(d.date); })
+        .attr("class", "moodCircle")
+        .attr("fill", function(d) {return d.mood;})
+        .attr("r", 8)
+        .attr("cx", x(X_DOMAIN/4)+38)
+        .attr("cy", function(d) { return y(d.date)})
+                   
+          
+    var photoCircles = dataCirclesGroup.selectAll(".photoCircle")
+       .data(dataWithPhotos);
        
-   $('svg circle').tipsy({
-                         gravity: 'e',
-                         html: true,
-                         fade: true,
-                         title: function() {
-                             var d = this.__data__;
-                             
-                             var title = d.bpm + " bpm";
-                             if (d.location != "") {
-                                title += "<br /> @ " + d.location;
-                             }
-                             if (d.notes != "") {
-                                 title += "<br /> Notes: " + d.notes;
-                             }
-                             if (d.calendar_event != "") {
-                                 title += "<br /> Calendar: " + d.calendar_event;
-                             }
-                             return title ;
-                         }
-                         });
+    photoCircles.enter()
+        .append("pattern")
+        .attr("id", "photo")
+        .attr("patternUnits", "userSpaceOnUse")
+        .attr("height", "32")
+        .attr("width", "32")
+        .append("image")
+        .attr("xlink:href", function(d){return d.photo;})
+        .attr("width", "32")
+        .attr("height", "32");
+    
+    photoCircles.enter()
+       .append("svg:line")
+       .attr("class", "moodLine")
+       .attr("x1", x(X_DOMAIN/4))
+       .attr("x2", x(X_DOMAIN/4)+30)
+       .attr("y1", function(d) { return y(d.date)})
+       .attr("y2", function(d) { return y(d.date)});
+
+    photoCircles.enter()
+       .append("svg:circle")
+       .attr("class", "photoCircle")
+       .attr("r", 16)
+       .attr("cx", x(X_DOMAIN/4)+46)
+       .attr("cy", function(d) { return y(d.date)})
+       .attr("fill", function(d) {return "url(#photo)";});
 });

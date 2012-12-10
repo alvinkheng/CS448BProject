@@ -30,13 +30,19 @@ a:hover {
 	font-size: bigger;
 }
 
+
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+
 .axis path,
 .axis line {
     fill: none;
-    stroke: #FFF;
+    stroke: #585858;
     stroke-width: 1;
     shape-rendering: crispEdges;
-    display:none;
 }
 
 .axis text {
@@ -50,17 +56,20 @@ a:hover {
 .y.axis text {
     font-size: 15px;
     font-weight: bold;
-    fill: #FFF;
+    fill: #585858;
 }
  
-.data-point {
+.data-point, .eventBox {
     stroke: #666666;
     stroke-width: 1.5;
     fill: #FFF;
 }
 
-.line {
-    fill: none;
-    stroke: steelblue;
-    stroke-width: 1.5px;
+.eventBoxText {
+    font-size: 10px;
+}
+
+.moodLine, .moodCircle {
+    stroke: rgb(0, 0, 0);
+    stroke-width:2;
 }
