@@ -170,6 +170,7 @@ d3.csv("sampleData.csv", function(data, error) {
                         }
                         });
        
+    //Create boxes for every entry that has a calendar event or note
     var eventBox = dataCirclesGroup.selectAll(".eventBox")
        .data(dataWithEvents);
        
@@ -189,7 +190,8 @@ d3.csv("sampleData.csv", function(data, error) {
        .attr("x", x(-X_DOMAIN) + 10)
        .attr("y", function(d) { return y(d.date) + 12})
        .text(function(d) { return (d.calendar_event != "") ? d.calendar_event : d.notes;});
-             
+            
+    //Create mood circles
     var moodCircles = dataCirclesGroup.selectAll(".moodLine")
         .data(dataWithMoods);
              
@@ -209,7 +211,7 @@ d3.csv("sampleData.csv", function(data, error) {
         .attr("cx", x(X_DOMAIN/4)+38)
         .attr("cy", function(d) { return y(d.date)})
                    
-          
+    //create photo circles
     var photoCircles = dataCirclesGroup.selectAll(".photoCircle")
        .data(dataWithPhotos);
        
