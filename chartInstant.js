@@ -30,6 +30,19 @@ var svg = d3.select("#chartInstant").append("svg")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+var LOW_BPM = 0;
+var HIGH_BPM = 20;
+
+//Normalizes the bpm then uses that value to interpolate between green and purple
+function getBPMColor(bpm) {
+    var normalizedBPM = Math.max(0, Math.min(bpm/(HIGH_BPM-LOW_BPM), 1));
+    var color = {};
+    color.r = Math.round(normalizedBPM * 255);
+    color.g = Math.round((1-normalizedBPM) * 255);
+    color.b = Math.round(normalizedBPM * 255);
+    return color;
+}
+
 d3.csv("sampleData.csv", function(data, error) { 
     var dailyData = [[]];
     var numDays = 0;
@@ -92,12 +105,17 @@ d3.csv("sampleData.csv", function(data, error) {
     .attr("r", 16)
     .attr("cx", function(d) { return x(d.date); })
     .attr("cy", function(d) { return y(d.bpm); })
+    .attr("style", function(d) {
+        var color = getBPMColor(d.bpm);
+        return "fill:rgb("+color.r+","+color.g+","+color.b+")";
+    });
     
     circles
     .enter()
     .append("svg:text")
     .attr("x", function(d) { return x(d.date)-4; })
     .attr("y", function(d) { return y(d.bpm)+4; })
+    .attr("style", "fill:white")
     .text(function(d){return Math.round(d.bpm)});
     
         
