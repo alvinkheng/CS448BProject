@@ -120,3 +120,53 @@ a:hover {
 #instantTitle text {
     font-size:15px;
 }
+
+#listBtn .ui-icon { 
+    background:  url(imgs/icon-list.png) 50% 50% no-repeat; 
+    background-size: 16px 16px; 
+}
+
+#listBtn.ui-btn-active {
+    background: #EEE;
+}
+
+#listBtn.ui-btn-active .ui-icon { 
+    background:  url(imgs/icon-list-on.png) 50% 50% no-repeat; 
+    background-size: 16px 16px; 
+}
+
+#mapBtn .ui-icon { 
+    background:  url(imgs/icon-map.png) 50% 50% no-repeat; 
+    background-size: 16px 16px; 
+}
+
+#mapBtn.ui-btn-active {
+    background: #EEE;
+}
+
+#mapBtn.ui-btn-active .ui-icon { 
+    background:  url(imgs/icon-map-on.png) 50% 50% no-repeat; 
+    background-size: 16px 16px; 
+}
+
+#barBtn .ui-icon { 
+    background:  url(imgs/icon-bar.png) 50% 50% no-repeat; 
+    background-size: 16px 16px; 
+}
+
+#barBtn.ui-btn-active {
+    background: #EEE;
+}
+
+#barBtn.ui-btn-active .ui-icon { 
+    background:  url(imgs/icon-bar-on.png) 50% 50% no-repeat; 
+    background-size: 16px 16px; 
+}
+
+.nav-glyphish-example .ui-btn .ui-icon { 
+    box-shadow: none!important; 
+    -moz-box-shadow: none!important; 
+    -webkit-box-shadow: none!important; 
+    -webkit-border-radius: 0 !important; 
+    border-radius: 0 !important; 
+}
