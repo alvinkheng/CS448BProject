@@ -37,6 +37,10 @@ a:hover {
     stroke-width: 1.5px;
 }
 
+.bar {
+    fill: steelblue;
+}
+
 .axis path,
 .axis line {
     fill: none;

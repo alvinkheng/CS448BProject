@@ -16,24 +16,26 @@
     </head>
     
     <body>
-        <div data-role='page'>
+        <div data-role='page' id="one">
             <center>
                 <div data-role='header' data-position='fixed' data-theme='b'>
-                    <h2 id="weeklyTitle"></h2>
+                    <h2 id="aggregateTitle"></h2>
                 </div>
-                <div id="chartWeekly"></div>
-                <script src="chartWeekly.js" type="text/javascript"></script>
+                <div id="chartAggregate"></div>
+                <a href='' onclick="$.mobile.changePage(#two, {transition: 'slide'});"><<</a>
+                <a href='' onclick="$.mobile.changePage(#two, {transition: 'slide'});">>></a>
+                <script src="chartAggregate.js" type="text/javascript"></script>
                 <div data-role='footer' data-position='fixed' data-theme='b'>
                     <div data-role="navbar" data-iconpos="left">
                         <ul>
                             <li><a href='index.html' data-icon="arrow-l">Instant</a></li>
-                            <li><a href='' data-icon="arrow-r" class='ui-btn-active ui-state-persist'>list</a></li>
+                            <li><a href='weeklyView.html' data-icon="arrow-r">list</a></li>
                             <li><a href='' data-icon="arrow-r">map</a></li>
-                            <li><a href='aggregateView.html' data-icon="arrow-r">bar</a></li>
+                            <li><a href='aggregateView.html' data-icon="arrow-r" class='ui-btn-active ui-state-persist'>bar</a></li>
                         </ul>
                     </div>
                 </div>
             </center>
         </div>
     </body>
-</html>
+</html> 
