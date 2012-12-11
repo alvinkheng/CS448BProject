@@ -67,7 +67,10 @@ d3.csv("Office Worker.csv", function(data, error) {
         .text("TODAY::" + new Date().toLocaleTimeString());
     
     //set x and y scales
-    x.domain(d3.extent(dailyData[0], function(d) { return d.date; }));
+    
+    var today = dailyData[dailyData.length-1];
+    
+    x.domain(d3.extent(today, function(d) { return d.date; }));
     y.domain([0, d3.max(dailyData[0], function(d) { return d.bpm; })]);
     
     svg.append("g")
@@ -85,19 +88,19 @@ d3.csv("Office Worker.csv", function(data, error) {
        .style("text-anchor", "end")
     .text("Breath Rate");
     
-    dailyData.forEach(function(day) {
-        svg.append("path")
-        .datum(day)
+    today.length = today.length/2 + 5;
+    
+    svg.append("path")
+        .datum(today)
         .attr("class", "line")
         .attr("d", line)
-    })
     
-    var today = [];
-    today.push(dailyData[0][dailyData[0].length-1]);
+    var now = [];
+    now.push(today[today.length-1]);
     
     var dataCirclesGroup = svg.append('svg:g');
     var circles = dataCirclesGroup.selectAll(".data-point")
-    .data(today);
+    .data(now);
     
     circles
     .enter()
