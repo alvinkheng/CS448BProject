@@ -4,7 +4,7 @@ height = 372 - margin.top - margin.bottom;
 
 var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-var parseDate = d3.time.format("%m-%d-%Y %H:%M:%S").parse;
+var parseDate = d3.time.format("%m/%d/%Y %H:%M").parse;
 
 var x = d3.scale.ordinal()
     .rangeRoundBands([0, width], .1);
@@ -44,7 +44,7 @@ function getBPMColor(bpm) {
 var _titles = {location: 'where do you find calm...', people: 'who makes you calm...', period: 'when are you calm...', calendar_event: 'what makes you calm...'};
 
 
-d3.csv("Office Worker.csv", function(data, error) { 
+d3.csv("Office Worker - Weekly.csv", function(data, error) { 
        var filterData = {}, numFilters = {}, filters = [];
        
        data.forEach(function(d) { 
