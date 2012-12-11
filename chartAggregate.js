@@ -1,5 +1,5 @@
 var margin = {top: 20, right: 20, bottom: 20, left: 30},
-width = 320 - margin.left - margin.right,
+width = 640 - margin.left - margin.right,
 height = 385 - margin.top - margin.bottom;
 
 var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -79,7 +79,7 @@ d3.csv("Office Worker.csv", function(data, error) {
        y.domain([0, d3.max(data, function(d) { return d.bpm; })]);
        
        svg.append("g")
-           .attr("class", "x axis")
+           .attr("class", "x axis agg")
            .call(xAxis)
            .attr("transform", "translate(0," + height + ")")
        
@@ -93,6 +93,8 @@ d3.csv("Office Worker.csv", function(data, error) {
            .style("text-anchor", "end")
            .text("Average Breath Rate");
        
+       var barWidth = width/filters.length - 5;
+       
        svg.selectAll(".bar")
            .data(filters)
            .enter().append("rect")
@@ -102,7 +104,7 @@ d3.csv("Office Worker.csv", function(data, error) {
                  return "fill:rgb("+color.r+","+color.g+","+color.b+")";
                  })
            .attr("x", function(d) { return x(d); })
-           .attr("width", width/4)
+           .attr("width", barWidth)
            .attr("y", function(d) { return y(filterData[d]); })
            .attr("height", function(d) { return height - y(filterData[d]); });
        

@@ -13,6 +13,7 @@ var y = d3.scale.linear()
     .range([height, 0]);
 
 var xAxis = d3.svg.axis()
+    .tickFormat(d3.time.format("%H"))
     .scale(x)
     .orient("bottom");
 
@@ -70,7 +71,7 @@ d3.csv("Office Worker.csv", function(data, error) {
     y.domain([0, d3.max(dailyData[0], function(d) { return d.bpm; })]);
     
     svg.append("g")
-    .attr("class", "x axis")
+    .attr("class", "x axis instant")
     .call(xAxis)
     .attr("transform", "translate(0," + height + ")")
     

@@ -57,6 +57,14 @@ a:hover {
     font-size: 15px;
 }
 
+.x.axis.instant text {
+    font-size: 10px;
+}
+
+.x.axis.agg text {
+    font-size: 10px;
+}
+
 .y.axis text {
     font-size: 15px;
     font-weight: bold;
