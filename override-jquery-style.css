@@ -1,0 +1,8 @@
+body .ui-btn-up-a,
+body .ui-btn-hover-a,
+body .ui-btn-down-a {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 300;
+    color: #4D4D4D;
+	text-decoration: none;
+}
