@@ -4,7 +4,7 @@ height = 372 - margin.top - margin.bottom;
 
 var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-var parseDate = d3.time.format("%Y-%m-%d %I:%M:%S %p").parse;
+var parseDate = d3.time.format("%m-%d-%Y %H:%M:%S").parse;
 
 var x = d3.scale.ordinal()
     .rangeRoundBands([0, width], .1);

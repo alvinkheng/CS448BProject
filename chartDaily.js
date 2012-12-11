@@ -29,7 +29,7 @@ function orientationHandler() {
 
 var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-var parseDate = d3.time.format("%Y-%m-%d %I:%M:%S %p").parse;
+var parseDate = d3.time.format("%m-%d-%Y %H:%M:%S").parse;
 
 var x = d3.scale.linear()
     .domain([-X_DOMAIN, X_DOMAIN])

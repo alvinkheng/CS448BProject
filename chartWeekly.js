@@ -4,7 +4,7 @@ var margin = {top: 30, right: 20, bottom: 20, left: 60},
 
 var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-var parseDate = d3.time.format("%Y-%m-%d %I:%M:%S %p").parse;
+var parseDate = d3.time.format("%m-%d-%Y %H:%M:%S").parse;
 
 var x = d3.time.scale()
     .range([0, width]);
