@@ -44,7 +44,6 @@ var _titles = {location: 'where do you find calm...', people: 'who makes you cal
 
 d3.csv("Office Worker.csv", function(data, error) { 
        var _currFilter = (window.location.search != "") ? window.location.search.substring(8) : "location";
-       console.log(_currFilter);
        var filterData = {}, numFilters = {}, filters = [];
        
        data.forEach(function(d) { 

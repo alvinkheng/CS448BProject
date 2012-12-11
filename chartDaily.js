@@ -55,8 +55,6 @@ var svg = d3.select("#chartDaily").append("svg")
 //Normalizes the bpm then uses that value to interpolate between green and purple
 function getBPMColor(bpm) {
     var normalizedBPM = Math.max(0, Math.min((bpm-5)/(HIGH_BPM-LOW_BPM), 1));
-    console.log(normalizedBPM);
-    console.log(bpm);
     var color = {};
     color.r = Math.round(normalizedBPM * 255);
     color.g = Math.round((1-normalizedBPM) * 255);
@@ -146,7 +144,6 @@ d3.csv("Office Worker.csv", function(data, error) {
         }
     });
        eventLengths[currEvent] = y(currDayData[currDayData.length-1].date) - y(eventStartTime);
-       console.log(eventLengths);
        
     //Create boxes for every entry that has a calendar event or note
     var eventBox = contextGroup.selectAll(".eventBox")
