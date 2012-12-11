@@ -70,7 +70,7 @@ d3.csv("Office Worker.csv", function(data, error) {
         hours -= 12;
     }
     d3.select("#instantTitle")
-        .text("TODAY::" + hours + ":" + now.getMinutes() + " " + ampm);
+        .text("TODAY :: " + hours + ":" + now.getMinutes() + " " + ampm);
     
     //set x and y scales
     
