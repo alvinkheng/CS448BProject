@@ -8,6 +8,8 @@
         <link rel="stylesheet" type="text/css" href="chart.css" />
         <link rel="stylesheet" type="text/css" href="tipsy.css" />
         <link rel="stylesheet" type="text/css" href="jquery.mobile-1.2.0.css" />
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,200italic,300italic,400italic ' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="override-jquery-style.css" />
         <script src="jquery-1.8.2.min.js"></script>
         <script src="jquery.mobile-1.2.0.js"></script>
         <script src="d3.v2.js"></script>
@@ -18,7 +20,7 @@
     <body>
         <div data-role='page'>
             <center>
-                <div data-role='header' data-position='fixed' data-theme='b'>
+                <div data-role='header' data-position='fixed' data-theme='c'>
                     <h2 id="weeklyTitle"></h2>
                 </div>
                 <div id="chartWeekly"></div>
@@ -26,8 +28,13 @@
                 <div data-role='footer' data-position='fixed' data-theme='b'>
                     <div data-role="navbar" data-iconpos="left">
                         <ul>
+<<<<<<< HEAD
+                            <li><a href='index.html' data-icon="arrow-l" data-theme='c'>Instant</a></li>
+                            <li><a href='' data-icon="arrow-r" data-theme='c'>list</a></li>
+=======
                             <li><a href='index.html' data-icon="arrow-l">Instant</a></li>
                             <li><a href='' data-icon="arrow-r" class='ui-btn-active ui-state-persist'>list</a></li>
+>>>>>>> 3de38c28687922f481aa62e8138d8eeb4dd50df2
                             <li><a href='' data-icon="arrow-r">map</a></li>
                             <li><a href='aggregateView.html' data-icon="arrow-r">bar</a></li>
                         </ul>

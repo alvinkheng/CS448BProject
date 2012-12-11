@@ -5,8 +5,8 @@ var margin = {top: 20, right: 10, bottom: 20, left: 60},
     height = 960 - margin.top - margin.bottom;
 
 var X_DOMAIN = 5;
-var LOW_BPM = 0;
-var HIGH_BPM = 20;
+var LOW_BPM = 5;
+var HIGH_BPM = 18;
 var _orientation = "portrait";
 var _moodRadii = [4, 8, 16, 32];
 
@@ -54,7 +54,9 @@ var svg = d3.select("#chartDaily").append("svg")
 
 //Normalizes the bpm then uses that value to interpolate between green and purple
 function getBPMColor(bpm) {
-    var normalizedBPM = Math.max(0, Math.min(bpm/(HIGH_BPM-LOW_BPM), 1));
+    var normalizedBPM = Math.max(0, Math.min((bpm-5)/(HIGH_BPM-LOW_BPM), 1));
+    console.log(normalizedBPM);
+    console.log(bpm);
     var color = {};
     color.r = Math.round(normalizedBPM * 255);
     color.g = Math.round((1-normalizedBPM) * 255);
