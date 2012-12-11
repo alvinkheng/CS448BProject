@@ -123,8 +123,8 @@ d3.csv("Office Worker.csv", function(data, error) {
     circles
     .enter()
     .append("svg:text")
+       .attr("class", "data-point-text")
     .attr("x", function(d) { return x(d.date)-6; })
     .attr("y", function(d) { return y(d.bpm)+4; })
-    .attr("style", "fill:white")
     .text(function(d){return Math.round(d.bpm)});
 });

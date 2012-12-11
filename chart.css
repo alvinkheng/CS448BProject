@@ -8,10 +8,15 @@ body .ui-btn-text {
 
 /*--- text/html ---*/
 
+body {
+    background-color: #E0E0E0;
+}
+
 * {
     font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
     color: #4D4D4D;
-    font-size: 15px;
+    font-size: 12px;
 }
 
 h1, h3, h4, h5, h6 {
@@ -46,14 +51,13 @@ a:hover {
 
 #chart, #chartWeekly, #chartInstant {
     font-family: 'Source Sans Pro', sans-serif;
-    background-color: #E0E0E0;
 
 }
 
 .line {
     fill: none;
-    stroke: steelblue;
-    stroke-width: 0.5px;
+    stroke: #FFF;
+    stroke-width: 2.5px;
 }
 
 .bar {
@@ -63,7 +67,7 @@ a:hover {
 .axis path,
 .axis line {
     fill: none;
-    stroke: #FFF;
+    stroke: #939597;
     stroke-width: 0.5;
     shape-rendering: crispEdges;
 }
@@ -80,31 +84,38 @@ a:hover {
 .x.axis text {
     font-size: 10px;
     font-weight: 200;
-    fill: #939597;
+    fill: #666666;
 }
 
 .x.axis.instant text {
     font-size: 10px;
     font-weight: 200;
-    fill: #939597;
+    fill: #666666;
 }
 
 .x.axis.agg text {
     font-size: 10px;
     font-weight: 200;
-    fill: #939597;
+    fill: #666666;
 }
 
 .y.axis text {
     font-size: 11px;
     font-weight: 200;
-    fill: #939597;
+    fill: #666666;
 }
  
 .data-point, .eventBox {
     stroke: #666666;
     stroke-width: 0.5;
     fill: #FFF;
+}
+
+.data-point-text {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 500;
+    fill: white;
+    text-shadow: none;
 }
 
 .eventBoxText {
