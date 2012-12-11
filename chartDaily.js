@@ -198,12 +198,12 @@ d3.csv("Office Worker.csv", function(data, error) {
         .append("pattern")
         .attr("id", "photo")
         .attr("patternUnits", "userSpaceOnUse")
-        .attr("height", "32")
-        .attr("width", "32")
+        .attr("height", "64")
+        .attr("width", "64")
         .append("image")
         .attr("xlink:href", function(d){return d.photo;})
-        .attr("width", "32")
-        .attr("height", "32");
+        .attr("width", "64")
+        .attr("height", "64");
     
     photoCircles.enter()
        .append("svg:line")
