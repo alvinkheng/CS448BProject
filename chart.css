@@ -54,9 +54,14 @@ a:hover {
 .axis path,
 .axis line {
     fill: none;
-    stroke: #939597;
+    stroke: #FFF;
     stroke-width: 0.5;
     shape-rendering: crispEdges;
+}
+
+.axis line.tick {
+    x2: -3;
+
 }
 
 .axis text {
@@ -64,7 +69,7 @@ a:hover {
 }
 
 .x.axis text {
-    font-size: 15px;
+    font-size: 12px;
 }
 
 .x.axis.instant text {
@@ -90,7 +95,7 @@ a:hover {
 .eventBoxText {
     font-family: 'Source Sans Pro', sans-serif;
     font-weight:300;
-    font-size: 10px;
+    font-size: 14px;
     text-shadow: none;
     fill: #FFFFFF;
 }

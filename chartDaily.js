@@ -1,6 +1,6 @@
 $(window).bind('orientationchange', orientationHandler);
 
-var margin = {top: 20, right: 10, bottom: 20, left: 60},
+var margin = {top: 10, right: 10, bottom: 10, left: 40},
     width = 320 - margin.left - margin.right,
     height = 960 - margin.top - margin.bottom;
 
@@ -167,8 +167,9 @@ d3.csv("Office Worker.csv", function(data, error) {
        .attr("class", "eventBoxText")
        .attr("width", x(X_DOMAIN)/3)
        .attr("height", 50)
+       .attr("margin", 4)
        .attr("x", x(-X_DOMAIN) + 10)
-       .attr("y", function(d) { return y(d.date) + 6})
+       .attr("y", function(d) { return y(d.date) + 15})
        .text(function(d) { return (d.calendar_event != "") ? d.calendar_event : d.notes;});
             
     //Create mood circles
