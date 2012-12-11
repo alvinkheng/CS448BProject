@@ -39,6 +39,9 @@ function getBPMColor(bpm) {
     return color;
 }
 
+var _titles = {location: 'where do you find calm...', people: 'who makes you calm...', period: 'when are you calm...', zone: 'how calm are you...', calendar_event: 'what makes you calm...'};
+
+
 d3.csv("Office Worker.csv", function(data, error) { 
        var _currFilter = (window.location.search != "") ? window.location.search.substring(8) : "location";
        console.log(_currFilter);
@@ -72,7 +75,7 @@ d3.csv("Office Worker.csv", function(data, error) {
        }
        title += lastDay.getDate();
        d3.select("#aggregateTitle")
-       .text(title);
+       .text(_titles[_currFilter]);
        
        //set x and y scales
        x.domain(filters);

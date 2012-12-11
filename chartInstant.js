@@ -64,7 +64,7 @@ d3.csv("Office Worker.csv", function(data, error) {
     
     //Set date as title
     d3.select("#instantTitle")
-        .text("Today");
+        .text("TODAY::" + new Date().toLocaleTimeString());
     
     //set x and y scales
     x.domain(d3.extent(dailyData[0], function(d) { return d.date; }));
@@ -118,35 +118,4 @@ d3.csv("Office Worker.csv", function(data, error) {
     .attr("y", function(d) { return y(d.bpm)+4; })
     .attr("style", "fill:white")
     .text(function(d){return Math.round(d.bpm)});
-    
-        
-    $('svg circle').tipsy({
-        gravity: 'e',
-        html: true,
-        fade: true,              
-        title: function() {
-            var d = this.__data__;
-            
-            var title = "Breath Rate: " + d.bpm + " bpm";
-            if (d.location != "") {
-                title += "<br /> Location: " + d.location;
-            }
-            if (d.notes != "") {
-                title += "<br /> Notes: " + d.notes;
-            }
-            if (d.calendar_event != "") {
-                title += "<br /> Calendar Event: " + d.calendar_event;
-            }
-            if (d.mood != "") {
-                title += "<br /> Mood: " + d.mood;
-            }
-            if (d.company != "alone") {
-                title += "<br /> With: " + d.company;
-            }
-            if (d.photo != "") {
-                title += "<br /> <img src="+d.photo+" />";
-            }
-            return title ;
-        }
-    });
 });

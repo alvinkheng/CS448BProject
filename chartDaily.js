@@ -2,7 +2,7 @@ $(window).bind('orientationchange', orientationHandler);
 
 var margin = {top: 20, right: 10, bottom: 20, left: 60},
     width = 320 - margin.left - margin.right,
-    height = 480 - margin.top - margin.bottom;
+    height = 960 - margin.top - margin.bottom;
 
 var X_DOMAIN = 5;
 var LOW_BPM = 0;
@@ -143,6 +143,7 @@ d3.csv("Office Worker.csv", function(data, error) {
             dataWithPhotos.push(d);
         }
     });
+       eventLengths[currEvent] = y(currDayData[currDayData.length-1].date) - y(eventStartTime);
        console.log(eventLengths);
        
     //Create boxes for every entry that has a calendar event or note
