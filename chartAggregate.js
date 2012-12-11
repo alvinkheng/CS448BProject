@@ -39,7 +39,7 @@ function getBPMColor(bpm) {
     return color;
 }
 
-d3.csv("sampleData.csv", function(data, error) { 
+d3.csv("Office Worker.csv", function(data, error) { 
        var _currFilter = (window.location.search != "") ? window.location.search.substring(8) : "location";
        console.log(_currFilter);
        var filterData = {}, numFilters = {}, filters = [];
@@ -49,7 +49,7 @@ d3.csv("sampleData.csv", function(data, error) {
                     d.date = parseDate(d.date);
                     //represent bpm as int
                     d.bpm = +d.bpm;
-                    if (!filterData[d[_currFilter]]) {
+                    if (d[_currFilter] != '' && !filterData[d[_currFilter]]) {
                         filterData[d[_currFilter]] = 0;
                         numFilters[d[_currFilter]] = 0;
                         filters.push(d[_currFilter]);

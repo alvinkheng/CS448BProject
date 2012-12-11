@@ -62,7 +62,7 @@ function getBPMColor(bpm) {
     return color;
 }
 
-d3.csv("sampleData.csv", function(data, error) {
+d3.csv("Office Worker.csv", function(data, error) {
     //get day from url
     var currDayNumber = (window.location.search != "") ? window.location.search.substring(5) : 4;
     

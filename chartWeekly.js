@@ -50,7 +50,7 @@ function getBPMColor(bpm) {
     return color;
 }
 
-d3.csv("sampleData.csv", function(data, error) { 
+d3.csv("Office Worker.csv", function(data, error) { 
     var weeklyData = [];
     var dailyData = [[]];
     var currDay = parseDate(data[data.length-1].date).toDateString();
