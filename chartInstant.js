@@ -1,6 +1,6 @@
 var margin = {top: 20, right: 20, bottom: 20, left: 30},
 width = 320 - margin.left - margin.right,
-height = 385 - margin.top - margin.bottom;
+height = 372 - margin.top - margin.bottom;
 
 var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -63,8 +63,14 @@ d3.csv("Office Worker.csv", function(data, error) {
     
     
     //Set date as title
+    var now = new Date();
+    var hours = now.getHours();
+    var ampm = (hours>=12) ? ampm = "PM" : "AM";
+    if (hours > 12) {
+        hours -= 12;
+    }
     d3.select("#instantTitle")
-        .text("TODAY::" + new Date().toLocaleTimeString());
+        .text("TODAY::" + hours + ":" + now.getMinutes() + " " + ampm);
     
     //set x and y scales
     
@@ -117,7 +123,7 @@ d3.csv("Office Worker.csv", function(data, error) {
     circles
     .enter()
     .append("svg:text")
-    .attr("x", function(d) { return x(d.date)-4; })
+    .attr("x", function(d) { return x(d.date)-6; })
     .attr("y", function(d) { return y(d.bpm)+4; })
     .attr("style", "fill:white")
     .text(function(d){return Math.round(d.bpm)});

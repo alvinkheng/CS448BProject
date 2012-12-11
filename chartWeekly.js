@@ -1,6 +1,6 @@
 var margin = {top: 30, right: 20, bottom: 20, left: 60},
     width = 640 - margin.left - margin.right,
-    height = 385 - margin.top - margin.bottom;
+    height = 372 - margin.top - margin.bottom;
 
 var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 

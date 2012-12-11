@@ -117,6 +117,11 @@ a:hover {
     left: auto !important;
 }
 
+#filterPopup-popup {
+    right: 0 !important;
+    left: auto !important;
+}
+
 #instantTitle text {
     font-size:15px;
 }
