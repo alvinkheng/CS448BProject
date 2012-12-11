@@ -107,6 +107,7 @@ d3.csv("Office Worker.csv", function(data, error) {
     svg.append("g")
         .attr("class", "x axis")
         .call(xAxis)
+    .attr("transform", "translate(40)");
     
     //draw y axis
     svg.append("g")
