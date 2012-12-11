@@ -90,7 +90,7 @@ d3.csv("Office Worker.csv", function(data, error) {
            .attr("class", "y axis")
            .call(yAxis)
            .append("text")
-           .attr("transform", "translate(75)")
+           .attr("transform", "rotate(-90)")
            .attr("y", 6)
            .attr("dy", ".71em")
            .style("text-anchor", "end")
