@@ -7,6 +7,7 @@ var margin = {top: 20, right: 10, bottom: 20, left: 60},
 var X_DOMAIN = 5;
 var LOW_BPM = 5;
 var HIGH_BPM = 18;
+var RIGHT_LINE_WIDTH = 50;
 var _orientation = "portrait";
 var _moodRadii = [4, 8, 16, 32];
 
@@ -176,7 +177,7 @@ d3.csv("Office Worker.csv", function(data, error) {
        .append("svg:line")
        .attr("class", "moodLine")
        .attr("x1", x(X_DOMAIN/3))
-       .attr("x2", x(X_DOMAIN/3)+30)
+       .attr("x2", x(X_DOMAIN/3)+RIGHT_LINE_WIDTH)
        .attr("y1", function(d) { return y(d.date)})
        .attr("y2", function(d) { return y(d.date)});
        
@@ -184,8 +185,8 @@ d3.csv("Office Worker.csv", function(data, error) {
        .append("svg:circle")
         .attr("class", "moodCircle")
         .attr("fill", function(d) {return d.mood.substring(0,7);})
-        .attr("r", function(d){return _moodRadii[d.mood.substring(8)]})
-        .attr("cx", x(X_DOMAIN/3)+30)
+        .attr("r", function(d){return _moodRadii[d.mood.substring(8) - 1]})
+        .attr("cx", x(X_DOMAIN/3)+RIGHT_LINE_WIDTH)
         .attr("cy", function(d) { return y(d.date)})
                    
     //create photo circles
@@ -207,7 +208,7 @@ d3.csv("Office Worker.csv", function(data, error) {
        .append("svg:line")
        .attr("class", "moodLine")
        .attr("x1", x(X_DOMAIN/3))
-       .attr("x2", x(X_DOMAIN/3)+30)
+       .attr("x2", x(X_DOMAIN/3)+RIGHT_LINE_WIDTH)
        .attr("y1", function(d) { return y(d.date)})
        .attr("y2", function(d) { return y(d.date)});
 
@@ -215,7 +216,7 @@ d3.csv("Office Worker.csv", function(data, error) {
        .append("svg:circle")
        .attr("class", "photoCircle")
        .attr("r", 32)
-       .attr("cx", x(X_DOMAIN/3)+62)
+       .attr("cx", x(X_DOMAIN/3)+RIGHT_LINE_WIDTH)
        .attr("cy", function(d) { return y(d.date)})
        .attr("fill", function(d) {return "url(#photo)";});
 });
