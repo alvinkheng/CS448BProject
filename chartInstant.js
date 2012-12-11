@@ -4,7 +4,7 @@ height = 372 - margin.top - margin.bottom;
 
 var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-var parseDate = d3.time.format("%m-%d-%Y %H:%M:%S").parse;
+var parseDate = d3.time.format("%m/%d/%Y %H:%M").parse;
 
 var x = d3.time.scale()
     .range([0, width]);
@@ -44,7 +44,7 @@ function getBPMColor(bpm) {
     return color;
 }
 
-d3.csv("Office Worker.csv", function(data, error) { 
+d3.csv("Office Worker - Weekly.csv", function(data, error) { 
     var dailyData = [[]];
     var numDays = 0;
     var currDay = parseDate(data[0].date).getDate();

@@ -29,7 +29,7 @@ function orientationHandler() {
 
 var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-var parseDate = d3.time.format("%m-%d-%Y %H:%M:%S").parse;
+var parseDate = d3.time.format("%m/%d/%Y %H:%M").parse;
 
 var x = d3.scale.linear()
     .domain([-X_DOMAIN, X_DOMAIN])
@@ -63,7 +63,7 @@ function getBPMColor(bpm) {
     return color;
 }
 
-d3.csv("Office Worker.csv", function(data, error) {
+d3.csv("Office Worker - Weekly.csv", function(data, error) {
     //get day from url
     var currDayNumber = (window.location.search != "") ? window.location.search.substring(5) : 4;
     

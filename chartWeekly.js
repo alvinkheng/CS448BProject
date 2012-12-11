@@ -4,7 +4,7 @@ var margin = {top: 30, right: 20, bottom: 20, left: 60},
 
 var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-var parseDate = d3.time.format("%m-%d-%Y %H:%M:%S").parse;
+var parseDate = d3.time.format("%m/%d/%Y %H:%M").parse;
 
 var x = d3.time.scale()
     .range([0, width]);
@@ -50,7 +50,7 @@ function getBPMColor(bpm) {
     return color;
 }
 
-d3.csv("Office Worker.csv", function(data, error) { 
+d3.csv("Office Worker - Weekly.csv", function(data, error) { 
     var weeklyData = [];
     var dailyData = [[]];
     var currDay = parseDate(data[data.length-1].date).toDateString();
