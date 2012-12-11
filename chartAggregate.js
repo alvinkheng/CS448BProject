@@ -20,6 +20,8 @@ var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left");
 
+var _currFilter = (window.location.search != "") ? window.location.search.substring(8) : "location";
+
 var svg = d3.select("#chartAggregate").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -43,7 +45,6 @@ var _titles = {location: 'where do you find calm...', people: 'who makes you cal
 
 
 d3.csv("Office Worker.csv", function(data, error) { 
-       var _currFilter = (window.location.search != "") ? window.location.search.substring(8) : "location";
        var filterData = {}, numFilters = {}, filters = [];
        
        data.forEach(function(d) { 
@@ -89,7 +90,7 @@ d3.csv("Office Worker.csv", function(data, error) {
            .attr("class", "y axis")
            .call(yAxis)
            .append("text")
-           .attr("transform", "translate(75)")
+           .attr("transform", "rotate(-90)")
            .attr("y", 6)
            .attr("dy", ".71em")
            .style("text-anchor", "end")
