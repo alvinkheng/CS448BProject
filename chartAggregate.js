@@ -41,7 +41,7 @@ function getBPMColor(bpm) {
     return color;
 }
 
-var _titles = {location: 'where do you find calm...', people: 'who makes you calm...', period: 'when are you calm...', zone: 'how calm are you...', calendar_event: 'what makes you calm...'};
+var _titles = {location: 'where do you find calm...', people: 'who makes you calm...', period: 'when are you calm...', calendar_event: 'what makes you calm...'};
 
 
 d3.csv("Office Worker.csv", function(data, error) { 
