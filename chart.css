@@ -6,6 +6,16 @@ body .ui-btn-text {
     font-weight: 300;
 }
 
+body .ui-btn-down-c .ui-btn-hover-c{
+    border: 1px solid #73c48d;
+    text-shadow: 0 1px 0 #FFF;
+
+}
+
+body .ui-btn-active {
+    background-color: #EEE
+}
+
 /*--- text/html ---*/
 
 body {
