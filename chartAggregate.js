@@ -2,7 +2,7 @@ var margin = {top: 20, right: 20, bottom: 20, left: 30},
 width = 640 - margin.left - margin.right,
 height = 385 - margin.top - margin.bottom;
 
-var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 var parseDate = d3.time.format("%Y-%m-%d %I:%M:%S %p").parse;
 

@@ -1,8 +1,8 @@
 var margin = {top: 30, right: 20, bottom: 20, left: 60},
     width = 640 - margin.left - margin.right,
-    height = 480 - margin.top - margin.bottom;
+    height = 385 - margin.top - margin.bottom;
 
-var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 var parseDate = d3.time.format("%Y-%m-%d %I:%M:%S %p").parse;
 
@@ -81,7 +81,7 @@ d3.csv("Office Worker.csv", function(data, error) {
     
     //Set date as title
     var lastDay = data[data.length-1].date; //latest day
-    var oneWeekAgo = new Date(lastDay.getTime() - 1000 * 60 * 60 * 24 * 7);
+    var oneWeekAgo = new Date(lastDay.getTime() - 1000 * 60 * 60 * 24 * 6);
     var title = monthNames[oneWeekAgo.getMonth()] + " " + oneWeekAgo.getDate() + " - ";
     if (lastDay.getMonth() != oneWeekAgo.getMonth()) {
         title += monthNames[lastDay.getMonth()] + " ";
@@ -91,7 +91,12 @@ d3.csv("Office Worker.csv", function(data, error) {
         .text(title);
     
     //set x and y scales
-    x.domain(d3.extent(currWeek, function(d) { return new Date(d.date.toDateString()); }));
+    var xDomain = [];
+    xDomain.push(new Date(currWeek[0].date.toDateString()));
+    var lastDay = new Date(currWeek[currWeek.length-1].date.toDateString());
+    lastDay = new Date(lastDay.getTime() + 23 * 60 * 60 * 1000);
+    xDomain.push(lastDay);
+    x.domain(xDomain);
     y.domain(d3.extent(weeklyData[_weekIndex][0], function(d) { 
         var newDate = new Date();
         newDate.setHours(d.date.getHours());
@@ -110,7 +115,7 @@ d3.csv("Office Worker.csv", function(data, error) {
     
     //variables for formatting
     var barHeight = 10;
-    var barWidth = width/8;
+    var barWidth = width/weeklyData[_weekIndex].length - 10;
     
     //append each day's data to graph
     weeklyData[_weekIndex].forEach(function(day) {
@@ -118,7 +123,7 @@ d3.csv("Office Worker.csv", function(data, error) {
             .data(day)
             .enter().append("rect")
             .attr("class", "bar")
-            .attr("x", function(d) { return 5 + x(new Date(d.date.toDateString())); })
+            .attr("x", function(d) { return x(new Date(d.date.toDateString())); })
             .attr("width", barWidth)
             .attr("y", function(d) { 
                 var newDate = new Date();
