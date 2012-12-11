@@ -196,7 +196,7 @@ d3.csv("Office Worker.csv", function(data, error) {
        
     photoCircles.enter()
         .append("pattern")
-        .attr("id", "photo")
+    .attr("id", function(d) {return d.date.getTime()+"photo"})
         .attr("patternUnits", "userSpaceOnUse")
         .attr("height", "64")
         .attr("width", "64")
@@ -219,5 +219,5 @@ d3.csv("Office Worker.csv", function(data, error) {
        .attr("r", 32)
        .attr("cx", x(X_DOMAIN/3)+RIGHT_LINE_WIDTH)
        .attr("cy", function(d) { return y(d.date)})
-       .attr("fill", function(d) {return "url(#photo)";});
+       .attr("fill", function(d) {return "url(#"+d.date.getTime()+"photo)";});
 });

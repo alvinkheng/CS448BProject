@@ -40,7 +40,7 @@ date,bpm,location,calendar_event,people,mood,period,zone,sighes,laughs,speech,no
 12-4-2012 12:10:00,11.5,Restaurant,Lunch,Co-workers,,Afternoon,Normal,0,4,2,,
 12-4-2012 12:15:00,14.46666667,Restaurant,Lunch,Co-workers,,Afternoon,Normal,0,4,3,,
 12-4-2012 12:20:00,15.18333333,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,5,1,,
-12-4-2012 12:25:00,14.76666667,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,5,2,,http:--globalassets.starbucks.com-assets-960b83c436e34f5ea4a1e5c7e6d5191e.jpg
+12-4-2012 12:25:00,14.76666667,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,5,2,,http://globalassets.starbucks.com/assets/960b83c436e34f5ea4a1e5c7e6d5191e.jpg/
 12-4-2012 12:30:00,14.95,Restaurant,Lunch,Co-workers,,Afternoon,Normal,0,5,0,,
 12-4-2012 12:35:00,16.43333333,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,4,4,,
 12-4-2012 12:40:00,16.03333333,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,1,2,,
@@ -220,7 +220,7 @@ date,bpm,location,calendar_event,people,mood,period,zone,sighes,laughs,speech,no
 12-5-2012 12:10:00,11.5,Restaurant,Lunch,Co-workers,,Afternoon,Normal,0,4,2,,
 12-5-2012 12:15:00,14.46666667,Restaurant,Lunch,Co-workers,,Afternoon,Normal,0,4,3,,
 12-5-2012 12:20:00,15.18333333,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,5,1,,
-12-5-2012 12:25:00,14.76666667,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,5,2,,http:--globalassets.starbucks.com-assets-960b83c436e34f5ea4a1e5c7e6d5191e.jpg
+12-5-2012 12:25:00,14.76666667,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,5,2,,http://globalassets.starbucks.com/assets/960b83c436e34f5ea4a1e5c7e6d5191e.jpg/
 12-5-2012 12:30:00,14.95,Restaurant,Lunch,Co-workers,,Afternoon,Normal,0,5,0,,
 12-5-2012 12:35:00,16.43333333,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,4,4,,
 12-5-2012 12:40:00,16.03333333,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,1,2,,
@@ -400,7 +400,7 @@ date,bpm,location,calendar_event,people,mood,period,zone,sighes,laughs,speech,no
 12-6-2012 12:10:00,11.5,Restaurant,Lunch,Co-workers,,Afternoon,Normal,0,4,2,,
 12-6-2012 12:15:00,14.46666667,Restaurant,Lunch,Co-workers,,Afternoon,Normal,0,4,3,,
 12-6-2012 12:20:00,15.18333333,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,5,1,,
-12-6-2012 12:25:00,14.76666667,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,5,2,,http:--globalassets.starbucks.com-assets-960b83c436e34f5ea4a1e5c7e6d5191e.jpg
+12-6-2012 12:25:00,14.76666667,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,5,2,,http://globalassets.starbucks.com/assets/960b83c436e34f5ea4a1e5c7e6d5191e.jpg/
 12-6-2012 12:30:00,14.95,Restaurant,Lunch,Co-workers,,Afternoon,Normal,0,5,0,,
 12-6-2012 12:35:00,16.43333333,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,4,4,,
 12-6-2012 12:40:00,16.03333333,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,1,2,,
@@ -580,7 +580,7 @@ date,bpm,location,calendar_event,people,mood,period,zone,sighes,laughs,speech,no
 12-7-2012 12:10:00,11.5,Restaurant,Lunch,Co-workers,,Afternoon,Normal,0,4,2,,
 12-7-2012 12:15:00,14.46666667,Restaurant,Lunch,Co-workers,,Afternoon,Normal,0,4,3,,
 12-7-2012 12:20:00,15.18333333,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,5,1,,
-12-7-2012 12:25:00,14.76666667,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,5,2,,http:--globalassets.starbucks.com-assets-960b83c436e34f5ea4a1e5c7e6d5191e.jpg
+12-7-2012 12:25:00,14.76666667,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,5,2,,http://globalassets.starbucks.com/assets/960b83c436e34f5ea4a1e5c7e6d5191e.jpg/
 12-7-2012 12:30:00,14.95,Restaurant,Lunch,Co-workers,,Afternoon,Normal,0,5,0,,
 12-7-2012 12:35:00,16.43333333,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,4,4,,
 12-7-2012 12:40:00,16.03333333,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,1,2,,
@@ -760,7 +760,7 @@ date,bpm,location,calendar_event,people,mood,period,zone,sighes,laughs,speech,no
 12-8-2012 12:10:00,11.5,Restaurant,Lunch,Co-workers,,Afternoon,Normal,0,4,2,,
 12-8-2012 12:15:00,14.46666667,Restaurant,Lunch,Co-workers,,Afternoon,Normal,0,4,3,,
 12-8-2012 12:20:00,15.18333333,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,5,1,,
-12-8-2012 12:25:00,14.76666667,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,5,2,,http:--globalassets.starbucks.com-assets-960b83c436e34f5ea4a1e5c7e6d5191e.jpg
+12-8-2012 12:25:00,14.76666667,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,5,2,,http://globalassets.starbucks.com/assets/960b83c436e34f5ea4a1e5c7e6d5191e.jpg/
 12-8-2012 12:30:00,14.95,Restaurant,Lunch,Co-workers,,Afternoon,Normal,0,5,0,,
 12-8-2012 12:35:00,16.43333333,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,4,4,,
 12-8-2012 12:40:00,16.03333333,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,1,2,,
@@ -940,7 +940,7 @@ date,bpm,location,calendar_event,people,mood,period,zone,sighes,laughs,speech,no
 12-9-2012 12:10:00,11.5,Restaurant,Lunch,Co-workers,,Afternoon,Normal,0,4,2,,
 12-9-2012 12:15:00,14.46666667,Restaurant,Lunch,Co-workers,,Afternoon,Normal,0,4,3,,
 12-9-2012 12:20:00,15.18333333,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,5,1,,
-12-9-2012 12:25:00,14.76666667,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,5,2,,http:--globalassets.starbucks.com-assets-960b83c436e34f5ea4a1e5c7e6d5191e.jpg
+12-9-2012 12:25:00,14.76666667,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,5,2,,http://globalassets.starbucks.com/assets/960b83c436e34f5ea4a1e5c7e6d5191e.jpg/
 12-9-2012 12:30:00,14.95,Restaurant,Lunch,Co-workers,,Afternoon,Normal,0,5,0,,
 12-9-2012 12:35:00,16.43333333,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,4,4,,
 12-9-2012 12:40:00,16.03333333,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,1,2,,
@@ -1120,7 +1120,7 @@ date,bpm,location,calendar_event,people,mood,period,zone,sighes,laughs,speech,no
 12-10-2012 12:10:00,11.5,Restaurant,Lunch,Co-workers,,Afternoon,Normal,0,4,2,,
 12-10-2012 12:15:00,14.46666667,Restaurant,Lunch,Co-workers,,Afternoon,Normal,0,4,3,,
 12-10-2012 12:20:00,15.18333333,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,5,1,,
-12-10-2012 12:25:00,14.76666667,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,5,2,,http:--globalassets.starbucks.com-assets-960b83c436e34f5ea4a1e5c7e6d5191e.jpg
+12-10-2012 12:25:00,14.76666667,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,5,2,,http:://globalassets.starbucks.com-assets-960b83c436e34f5ea4a1e5c7e6d5191e.jpg
 12-10-2012 12:30:00,14.95,Restaurant,Lunch,Co-workers,,Afternoon,Normal,0,5,0,,
 12-10-2012 12:35:00,16.43333333,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,4,4,,
 12-10-2012 12:40:00,16.03333333,Restaurant,Lunch,Co-workers,,Afternoon,Normal,1,1,2,,
@@ -1305,7 +1305,7 @@ date,bpm,location,calendar_event,people,mood,period,zone,sighes,laughs,speech,no
 12-11-2012 12:35:00,17.76666667,Cafe,Lunch,Friends,,Afternoon,Normal,1,4,4,,
 12-11-2012 12:40:00,17.86666667,Cafe,Lunch,Friends,,Afternoon,Normal,1,1,2,,
 12-11-2012 12:45:00,17.5,Cafe,Lunch,Friends,,Afternoon,Normal,1,3,4,,
-12-11-2012 12:50:00,13.6,Cafe,Lunch,Friends,,Afternoon,Normal,0,3,0,,
+12-11-2012 12:50:00,13.6,Cafe,Lunch,Friends,,Afternoon,Normal,0,3,0,,http://cdn.funcheap.com/wp-content/uploads/2011/11/ikes-sandwich.jpg
 12-11-2012 12:55:00,14.56666667,Cafe,Lunch,Friends,,Afternoon,Normal,1,0,1,,
 12-11-2012 13:00:00,14.76666667,Cafe,Lunch,Friends,#FAED23-3,Afternoon,Normal,1,0,0,,
 12-11-2012 13:05:00,14.4,Cafe,Lunch,Friends,,Afternoon,Normal,0,0,0,,
