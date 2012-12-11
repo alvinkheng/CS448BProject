@@ -47,6 +47,10 @@ a:hover {
     stroke-width: 0.5px;
 }
 
+.bar {
+    fill: steelblue;
+}
+
 .axis path,
 .axis line {
     fill: none;
@@ -63,6 +67,14 @@ a:hover {
     font-size: 15px;
 }
 
+.x.axis.instant text {
+    font-size: 10px;
+}
+
+.x.axis.agg text {
+    font-size: 10px;
+}
+
 .y.axis text {
     font-size: 11px;
     font-weight: 200;
@@ -76,6 +88,7 @@ a:hover {
 }
 
 .eventBoxText {
+<<<<<<< HEAD
     font-family: 'Source Sans Pro', sans-serif;
     font-weight:300;
     font-size: 10px;
@@ -92,4 +105,17 @@ a:hover {
 .moodLine, .moodCircle {
     stroke: #939597;
     stroke-width:0.5;
+=======
+    font-size: 8px;
+}
+
+.moodLine, .moodCircle {
+    stroke: rgb(0, 0, 0);
+    stroke-width:2;
+}
+
+#popupPanel-popup {
+    right: 0 !important;
+    left: auto !important;
+>>>>>>> 3de38c28687922f481aa62e8138d8eeb4dd50df2
 }
