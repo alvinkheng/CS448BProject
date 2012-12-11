@@ -113,12 +113,28 @@ d3.csv("Office Worker.csv", function(data, error) {
     var contextGroup = svg.append('svg:g');
     
     var dataWithEvents = [];
+    var eventLengths = {};
     var dataWithMoods = [];
     var dataWithPhotos = [];
    
+   var currEvent = '';
+    var eventStartTime;
     currDayData.forEach(function(d) {
-        if (d.calendar_event != "" || d.notes != "") {
-            dataWithEvents.push(d);
+        if (d.calendar_event != "") {
+                        if (currEvent == '') {
+                            dataWithEvents.push(d);
+                            currEvent = d.calendar_event;
+                            eventStartTime = d.date;
+                        } else if (currEvent != d.calendar_event) {
+                            eventLengths[currEvent] = y(d.date) - y(eventStartTime);
+                            if (d.calendar_event != '') {
+                                dataWithEvents.push(d);
+                                currEvent = d.calendar_event;
+                                eventStartTime = d.date;
+                            } else {
+                                currEvent == '';
+                            }
+                        }
         }
         if (d.mood != "") {
             dataWithMoods.push(d);
@@ -127,6 +143,7 @@ d3.csv("Office Worker.csv", function(data, error) {
             dataWithPhotos.push(d);
         }
     });
+       console.log(eventLengths);
        
     //Create boxes for every entry that has a calendar event or note
     var eventBox = contextGroup.selectAll(".eventBox")
@@ -137,7 +154,7 @@ d3.csv("Office Worker.csv", function(data, error) {
        .append("svg:rect")
        .attr("class", "eventBox")
        .attr("width", x(X_DOMAIN)/3)
-       .attr("height", 50)
+       .attr("height", function(d) {return eventLengths[d.calendar_event];})
        .attr("x", x(-X_DOMAIN))
        .attr("y", function(d) { return y(d.date)})
        
@@ -148,7 +165,7 @@ d3.csv("Office Worker.csv", function(data, error) {
        .attr("width", x(X_DOMAIN)/3)
        .attr("height", 50)
        .attr("x", x(-X_DOMAIN) + 10)
-       .attr("y", function(d) { return y(d.date) + 12})
+       .attr("y", function(d) { return y(d.date) + 6})
        .text(function(d) { return (d.calendar_event != "") ? d.calendar_event : d.notes;});
             
     //Create mood circles
