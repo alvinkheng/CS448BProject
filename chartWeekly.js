@@ -37,12 +37,12 @@ function getCurrWeek(weeklyData) {
     return currWeek;
 }
 
-var LOW_BPM = 0;
-var HIGH_BPM = 20;
+var LOW_BPM = 5;
+var HIGH_BPM = 18;
 
 //Normalizes the bpm then uses that value to interpolate between green and purple
 function getBPMColor(bpm) {
-    var normalizedBPM = Math.max(0, Math.min(bpm/(HIGH_BPM-LOW_BPM), 1));
+    var normalizedBPM = Math.max(0, Math.min((bpm-5)/(HIGH_BPM-LOW_BPM), 1));
     var color = {};
     color.r = Math.round(normalizedBPM * 255);
     color.g = Math.round((1-normalizedBPM) * 255);
