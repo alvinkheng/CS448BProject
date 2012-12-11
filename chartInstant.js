@@ -101,6 +101,22 @@ d3.csv("Office Worker.csv", function(data, error) {
         .attr("class", "line")
         .attr("d", line)
     
+    //each bar is 10 minutes 
+    var barWidth = x(new Date(10*60*1000)) - x(new Date(0));
+    
+    svg.selectAll(".bars")
+        .data(today)
+        .enter().append("rect")
+        .attr("class", "bar")
+        .attr("x", function(d) { return x(d.date); })
+        .attr("width", barWidth)
+        .attr("y", y(3))
+        .attr("height", height - y(3))
+        .attr("style", function(d) {
+            var color = getBPMColor(d.bpm);
+            return "fill:rgb("+color.r+","+color.g+","+color.b+")";
+        });
+    
     var now = [];
     now.push(today[today.length-1]);
     
